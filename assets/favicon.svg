@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#000000"/>
-  <text x="256" y="290" text-anchor="middle" font-family="Arial, sans-serif">
-    <tspan font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="130" letter-spacing="-5" fill="#FFFFFF">OLA</tspan><tspan font-size="130" fill="#FF2D2D" dy="-16">&#8226;</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="512" height="512" viewBox="0 0 512 512">
+  <foreignObject x="0" y="0" width="512" height="512">
+    <xhtml:div style="width:512px;height:512px;margin:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#000000;">
+      <xhtml:div style="font-family:'Inter',Arial,sans-serif;font-weight:900;letter-spacing:-0.055em;text-transform:uppercase;line-height:1;display:inline-flex;align-items:baseline;font-size:120px;color:#FFFFFF;">
+        <xhtml:span>OLA</xhtml:span><xhtml:span style="display:inline-block;width:0.15em;height:0.15em;background:#FF2D2D;border-radius:50%;margin:0 0.04em;transform:translateY(-0.04em);"></xhtml:span>
+      </xhtml:div>
+    </xhtml:div>
+  </foreignObject>
 </svg>

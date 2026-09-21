@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
-  <rect width="1000" height="1000" fill="#FF2D2D"/>
-  <text x="500" y="500" text-anchor="middle" font-family="Arial, sans-serif">
-    <tspan font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="120" letter-spacing="-5" fill="#FFFFFF">OLA</tspan><tspan font-size="120" fill="#FFFFFF" dy="-14">&#8226;</tspan><tspan font-family="Helvetica Neue, Arial, sans-serif" font-weight="300" font-size="53" fill="#FFFFFF" fill-opacity="0.8" dx="6" dy="14">empresario</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <foreignObject x="0" y="0" width="1200" height="1200">
+    <xhtml:div style="width:1200px;height:1200px;margin:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#FF2D2D;">
+      <xhtml:div style="font-family:'Inter',Arial,sans-serif;font-weight:900;letter-spacing:-0.055em;text-transform:uppercase;line-height:1;display:inline-flex;align-items:baseline;font-size:160px;color:#FFFFFF;">
+        <xhtml:span>OLA</xhtml:span><xhtml:span style="display:inline-block;width:0.15em;height:0.15em;background:#FFFFFF;border-radius:50%;margin:0 0.04em;transform:translateY(-0.04em);"></xhtml:span><xhtml:span style="font-weight:300;letter-spacing:-0.01em;text-transform:lowercase;font-size:0.44em;align-self:center;margin-left:0.1em;color:rgba(255,255,255,0.8);">empresario</xhtml:span>
+      </xhtml:div>
+    </xhtml:div>
+  </foreignObject>
 </svg>
