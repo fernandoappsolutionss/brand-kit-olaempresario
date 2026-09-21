@@ -1,0 +1,3457 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OLAempresario — Brand Kit · El Sistema Faro</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<script>
+const TWEAK_DEFAULTS = { mode: "dark", redIntensity: "standard" };
+</script>
+
+<style>
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --red:   #FF2D2D;
+  --red-2: #D41F1F;
+  --ink-80: #111111;
+  --ink-60: #1A1A1A;
+  --ink-40: #262626;
+  --line:   #2A2A2A;
+  --muted:  #8A8A8A;
+  --muted-2: #5A5A5A;
+
+  --f-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+[data-mode="light"] {
+  --black: #FFFFFF;
+  --white: #000000;
+  --ink-80: #F5F5F5;
+  --ink-60: #EDEDED;
+  --ink-40: #DDDDDD;
+  --line: #E2E2E2;
+  --muted: #555555;
+  --muted-2: #888888;
+}
+
+[data-red="deep"] { --red: #D41F1F; --red-2: #A31212; }
+[data-red="hot"]  { --red: #FF1744; --red-2: #D50032; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in oklab, var(--black) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 48px;
+}
+.nav-logo {
+  display: flex; align-items: baseline; gap: 2px;
+  font-family: var(--f-sans);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+.nav-logo .ola { color: var(--white); }
+.nav-logo .emp { color: var(--white); font-weight: 400; margin-left: 4px; font-size: 15px; letter-spacing: 0; align-self: center; color: var(--muted); }
+.nav-logo .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); display: inline-block; margin-left: 4px; transform: translateY(1px); }
+.nav-links { display: flex; gap: 26px; font-size: 12px; color: var(--muted); font-family: var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-links a { text-decoration: none; transition: color .15s; }
+.nav-links a:hover { color: var(--white); }
+.nav-meta {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-meta .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; display: inline-block; }
+
+/* ============ HERO ============ */
+.hero {
+  padding: 140px 0 120px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.hero-eyebrow {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 48px;
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--muted); }
+.hero h1 {
+  font-weight: 900;
+  font-size: clamp(52px, 14vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+.hero h1 .dot {
+  display: inline-block;
+  width: 0.14em; height: 0.14em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.08em);
+  margin-left: 0.05em;
+  box-shadow: 0 0 40px color-mix(in oklab, var(--red) 60%, transparent);
+}
+.hero-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
+}
+.hero-sub {
+  font-size: 20px;
+  line-height: 1.4;
+  max-width: 50ch;
+  margin: 0;
+  font-weight: 300;
+}
+.hero-sub b { font-weight: 600; color: var(--white); }
+.hero-meta {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px;
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.hero-meta dt { margin: 0 0 6px; }
+.hero-meta dd {
+  margin: 0;
+  font-family: var(--f-sans); font-weight: 500;
+  color: var(--white); font-size: 14px;
+  letter-spacing: 0; text-transform: none;
+}
+
+/* ============ SECTIONS ============ */
+section { padding: 140px 0; border-bottom: 1px solid var(--line); }
+.sect-head {
+  display: grid; grid-template-columns: 180px 1fr; gap: 48px;
+  margin-bottom: 80px;
+}
+.sect-num {
+  font-family: var(--f-mono);
+  font-size: 12px; letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.sect-num big {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: 80px; font-weight: 900; line-height: 0.9;
+  color: var(--white);
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+.sect-num big em {
+  font-style: normal; color: var(--red);
+}
+.sect-title {
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+.sect-title .dot {
+  display: inline-block;
+  width: 0.14em; height: 0.14em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.05em); margin-left: 0.05em;
+}
+.sect-desc {
+  font-size: 17px; line-height: 1.5;
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* quote / faro */
+.faro-quote {
+  margin: 56px 0 0;
+  padding: 32px 0 32px 28px;
+  border-left: 3px solid var(--red);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  max-width: 900px;
+}
+.faro-quote footer {
+  margin-top: 16px;
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============ ESSENCE / O·L·A ============ */
+.ola-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.ola-letter {
+  background: var(--black);
+  padding: 48px 36px;
+  min-height: 340px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.ola-letter big {
+  font-size: 180px; font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  color: var(--white);
+}
+.ola-letter big .dot {
+  display: inline-block;
+  width: 0.12em; height: 0.12em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.05em); margin-left: 0.04em;
+}
+.ola-letter h4 {
+  font-size: 24px; font-weight: 700; margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.ola-letter p {
+  font-size: 14px; color: var(--muted); margin: 0;
+  line-height: 1.5;
+}
+.ola-letter-meta {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* pillars: somos / no somos */
+.pillars {
+  margin-top: 72px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.pillar { background: var(--black); padding: 40px; }
+.pillar h5 {
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.pillar h5 .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; display: inline-block; }
+.pillar.negative h5 .dot { background: var(--muted); }
+.pillar ul { list-style: none; padding: 0; margin: 0; }
+.pillar li {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  font-size: 17px; font-weight: 400;
+  display: flex; gap: 14px;
+}
+.pillar li::before {
+  content: "+"; color: var(--red); font-family: var(--f-mono);
+  font-weight: 500;
+}
+.pillar.negative li::before { content: "—"; color: var(--muted); }
+.pillar li:first-child { border-top: none; }
+
+/* ============ LOGO SECTION ============ */
+.logo-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.logo-cell {
+  background: var(--black);
+  padding: 64px 40px 28px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 380px;
+  position: relative;
+}
+.logo-cell[data-v="light"] { background: var(--white); color: var(--black); }
+.logo-cell[data-v="red"] { background: var(--red); color: var(--white); }
+.logo-stage {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+}
+.logo-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid currentColor;
+  padding-top: 16px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.logo-cell[data-v="light"] .logo-meta, .logo-cell[data-v="red"] .logo-meta {
+  border-color: color-mix(in oklab, currentColor 30%, transparent);
+}
+
+.dl-row { display: flex; gap: 8px; margin-top: 14px; }
+.dl-btn {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: inherit; text-decoration: none;
+  border: 1px solid currentColor; opacity: 0.75;
+  padding: 7px 12px; border-radius: 999px;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+.dl-btn:hover { opacity: 1; background: color-mix(in oklab, currentColor 12%, transparent); }
+
+/* wordmark using type */
+.wordmark {
+  font-weight: 900; letter-spacing: -0.055em;
+  text-transform: uppercase; line-height: 1;
+  display: inline-flex; align-items: baseline;
+}
+.wordmark .ola-part { font-weight: 900; }
+.wordmark .dot {
+  display: inline-block;
+  width: 0.15em; height: 0.15em;
+  background: var(--red); border-radius: 50%;
+  margin: 0 0.04em;
+  transform: translateY(-0.04em);
+}
+.wordmark .emp-part {
+  font-weight: 300; letter-spacing: -0.01em;
+  text-transform: lowercase;
+  font-size: 0.44em;
+  align-self: center;
+  margin-left: 0.1em;
+  color: currentColor;
+}
+.logo-cell[data-v="red"] .wordmark .dot { background: var(--white); }
+
+/* monogram: the red dot as standalone */
+.monogram-stage {
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  width: 220px; height: 220px;
+  margin: 0 auto;
+}
+.monogram-stage .ring {
+  position: absolute; inset: 0; border: 1px solid currentColor;
+  border-radius: 50%; opacity: 0.2;
+}
+.monogram-stage .ring2 { inset: 20px; opacity: 0.4; }
+.monogram-stage .dot {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 80px color-mix(in oklab, var(--red) 60%, transparent);
+}
+
+/* Logo sizes row */
+.logo-sizes {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.size-cell {
+  background: var(--black);
+  padding: 40px 24px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 20px; min-height: 200px;
+}
+.size-label {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.1em; color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* clearspace */
+.clearspace {
+  margin-top: 48px;
+  background: var(--ink-80);
+  padding: 80px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  border: 1px solid var(--line);
+}
+
+/* ============ COLOR ============ */
+.color-hero {
+  display: grid; grid-template-columns: 3fr 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  min-height: 420px;
+}
+.color-block {
+  padding: 36px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+}
+.color-block.k { background: var(--black); color: var(--white); border: 1px solid var(--line); }
+.color-block.w { background: var(--white); color: var(--black); }
+.color-block.r { background: var(--red); color: var(--white); }
+
+.color-block .label {
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; opacity: 0.65;
+  margin-bottom: 8px;
+}
+.color-block h4 {
+  font-weight: 900; font-size: 56px; line-height: 0.9;
+  letter-spacing: -0.04em; margin: 0 0 20px;
+  text-transform: uppercase;
+}
+.color-block .tokens {
+  display: grid; gap: 4px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+}
+.color-block .tokens span {
+  display: flex; justify-content: space-between; gap: 16px;
+}
+.color-block .tokens b { font-weight: 500; opacity: 0.6; }
+.color-block .ratio {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  position: absolute; top: 36px; right: 36px;
+  opacity: 0.6;
+}
+
+.color-block.r .ratio { opacity: 0.9; }
+
+/* ============ TYPE ============ */
+.type-spec {
+  display: grid; grid-template-columns: 240px 1fr; gap: 56px;
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+}
+.type-spec:first-of-type { border-top: none; padding-top: 0; }
+.type-meta {
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 0.1em;
+  color: var(--muted); text-transform: uppercase;
+  line-height: 1.7;
+}
+.type-meta b {
+  display: block;
+  font-family: var(--f-sans); font-weight: 700;
+  color: var(--white);
+  font-size: 18px; letter-spacing: -0.01em; text-transform: none;
+  margin-bottom: 6px;
+}
+.type-sample-display {
+  font-weight: 900;
+  font-size: clamp(80px, 12vw, 160px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin: 0; text-transform: uppercase;
+}
+.type-sample-display .dot {
+  display: inline-block; width: 0.14em; height: 0.14em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.05em); margin-left: 0.04em;
+}
+.type-sample-body {
+  font-size: 26px; font-weight: 300;
+  line-height: 1.4; max-width: 40ch;
+  letter-spacing: -0.01em; margin: 0;
+}
+.type-sample-body b { font-weight: 700; }
+.type-sample-mono {
+  font-family: var(--f-mono);
+  font-size: 16px; line-height: 1.5; margin: 0;
+  color: var(--muted);
+}
+.type-sample-mono span { color: var(--red); }
+
+/* type scale */
+.type-scale {
+  margin-top: 64px;
+  display: grid; grid-template-columns: 140px 160px 1fr;
+  gap: 20px 32px;
+  font-family: var(--f-mono);
+  font-size: 12px; color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.type-scale .tsample {
+  color: var(--white); font-family: var(--f-sans);
+  letter-spacing: -0.01em; line-height: 1;
+}
+.type-scale .trow { display: contents; }
+.type-scale .trow > * { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.type-scale .thead > * { color: var(--muted); font-weight: 500; }
+
+/* ============ VOICE ============ */
+.voice-tabla {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 16px;
+}
+.voice-tabla .h {
+  background: var(--black); padding: 20px 28px;
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.voice-tabla .h.si  { color: var(--red); }
+.voice-tabla .h.no  { color: var(--muted); }
+.voice-tabla .row {
+  background: var(--black);
+  padding: 22px 28px;
+  font-size: 17px; line-height: 1.4;
+}
+.voice-tabla .row.no { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.voice-tabla .row.si { color: var(--white); }
+
+/* vocabulary */
+.vocab {
+  margin-top: 64px;
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.vocab .row { display: contents; }
+.vocab .row > * {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.vocab .term {
+  font-weight: 700;
+  font-size: 20px; letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 10px;
+}
+.vocab .term .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+.vocab .def { color: var(--muted); font-size: 15px; line-height: 1.5; padding-left: 32px; }
+
+/* reglas de voz numeradas */
+.rules {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.rule { background: var(--black); padding: 28px 24px; min-height: 220px; display: flex; flex-direction: column; }
+.rule .n {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em;
+  color: var(--red); margin-bottom: 16px;
+}
+.rule h5 {
+  font-weight: 700; font-size: 18px; margin: 0 0 12px;
+  letter-spacing: -0.01em; line-height: 1.2;
+}
+.rule p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+/* ============ METAPHOR TABLE ============ */
+.metaphor-table {
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 160px 1.2fr 1.6fr;
+}
+.metaphor-table > * {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  font-size: 15px;
+}
+.metaphor-table > *:nth-child(3n) { border-right: none; }
+.metaphor-table .head {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); background: var(--ink-80);
+}
+.metaphor-table .term {
+  font-weight: 700; font-size: 17px;
+  letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 10px;
+}
+.metaphor-table .term .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+.metaphor-table .meaning { color: var(--muted); }
+.metaphor-table .example { font-style: italic; color: var(--white); font-weight: 300; }
+
+/* ============ FRAMEWORKS ============ */
+.faro-phases {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.phase {
+  background: var(--black);
+  padding: 36px 24px;
+  min-height: 340px;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.phase .fnum {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.14em; color: var(--muted);
+  margin-bottom: 12px;
+}
+.phase .fcode {
+  font-weight: 900; font-size: 64px;
+  line-height: 0.9; letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+.phase .fcode em { font-style: normal; color: var(--red); }
+.phase h5 {
+  font-weight: 700; font-size: 20px;
+  letter-spacing: -0.01em; margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.phase p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
+.phase .out {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.phase .out b { color: var(--white); display: block; font-family: var(--f-sans); font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 500; margin-top: 4px; line-height: 1.4; }
+
+/* small frameworks grid */
+.fw-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.fw {
+  background: var(--black); padding: 36px;
+  min-height: 280px;
+}
+.fw h4 {
+  font-weight: 900; font-size: 36px;
+  letter-spacing: -0.04em; margin: 0 0 6px;
+  text-transform: uppercase;
+}
+.fw h4 .dot { display: inline-block; width: 0.18em; height: 0.18em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.fw .sub { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 24px; text-transform: uppercase; }
+.fw dl { display: grid; grid-template-columns: 36px 1fr; gap: 8px 16px; margin: 0; }
+.fw dt { font-weight: 700; color: var(--red); font-family: var(--f-mono); font-size: 14px; }
+.fw dd { margin: 0; font-size: 14px; color: var(--white); }
+.fw dd small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; line-height: 1.4; }
+
+/* ============ AVATARS ============ */
+.avatar-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.avatar-card {
+  background: var(--ink-80);
+  border: 1px solid var(--line);
+  padding: 40px;
+  min-height: 580px;
+  display: flex; flex-direction: column;
+}
+.avatar-card .tag {
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: 0.14em;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.avatar-card h3 {
+  font-weight: 900; font-size: 44px;
+  line-height: 0.95; letter-spacing: -0.03em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.avatar-card .sub {
+  color: var(--muted); font-size: 14px;
+  margin: 0 0 28px;
+  font-family: var(--f-mono); letter-spacing: 0.05em;
+}
+.avatar-card h6 {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+  margin: 24px 0 12px;
+}
+.avatar-card p { font-size: 14px; margin: 0 0 12px; line-height: 1.5; }
+.avatar-card .says {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px; line-height: 1.5;
+  padding-left: 16px; border-left: 2px solid var(--red);
+  margin: 0;
+}
+.avatar-card .needs {
+  background: var(--black); padding: 18px 20px;
+  margin-top: auto; border: 1px solid var(--line);
+  font-size: 14px; line-height: 1.5;
+}
+.avatar-card .needs b { color: var(--red); font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+
+/* anti-avatar */
+.anti {
+  margin-top: 32px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.anti-cell {
+  background: var(--black); padding: 24px 20px;
+  min-height: 200px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.anti-cell .x {
+  width: 28px; height: 28px;
+  border: 1px solid var(--muted);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted);
+  font-family: var(--f-mono); font-size: 14px;
+}
+.anti-cell h6 { margin: 0; font-size: 14px; line-height: 1.3; font-weight: 600; }
+.anti-cell p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ============ STACK ============ */
+.funnel {
+  display: grid; gap: 8px;
+  margin-bottom: 64px;
+}
+.funnel-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 160px 160px;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  background: var(--black);
+  transition: border-color .2s;
+}
+.funnel-row:hover { border-color: var(--red); }
+.funnel-row.highlight { background: var(--red); color: var(--white); border-color: var(--red); }
+.funnel-row.highlight .fn-note, .funnel-row.highlight .fn-price { color: var(--white); opacity: 0.9; }
+.funnel-row .fn-step {
+  font-family: var(--f-mono); font-size: 12px;
+  letter-spacing: 0.1em; color: var(--red);
+}
+.funnel-row.highlight .fn-step { color: var(--white); }
+.funnel-row h5 {
+  font-weight: 700; font-size: 22px; margin: 0;
+  letter-spacing: -0.01em;
+}
+.funnel-row .fn-note { font-size: 13px; color: var(--muted); }
+.funnel-row .fn-price { font-family: var(--f-mono); font-size: 14px; color: var(--white); }
+.funnel-arrow {
+  text-align: center;
+  color: var(--red);
+  font-family: var(--f-mono);
+  letter-spacing: 0.2em; font-size: 12px;
+  padding: 6px 0;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 1px solid var(--line);
+  margin-top: 24px;
+  background: var(--black);
+}
+.product-card.featured {
+  border-color: var(--red);
+}
+.product-main { padding: 40px; }
+.product-side { padding: 40px; background: var(--ink-80); border-left: 1px solid var(--line); }
+.product-card.featured .product-side { background: var(--red); color: var(--white); border-left: none; }
+
+.product-main .tag {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.14em; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.product-main .tag b { color: var(--red); }
+.product-main h3 {
+  font-weight: 900; font-size: 44px;
+  letter-spacing: -0.03em; margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.product-main .subt {
+  color: var(--muted); margin: 0 0 24px;
+  font-size: 15px;
+}
+.product-main ul { list-style: none; padding: 0; margin: 0; }
+.product-main li {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  display: flex; gap: 12px;
+}
+.product-main li::before {
+  content: "•"; color: var(--red);
+  font-weight: 700; flex-shrink: 0;
+}
+.product-main li:first-child { border-top: none; }
+
+.product-side .pitem {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; opacity: 0.7;
+  margin-bottom: 6px;
+}
+.product-side .pval {
+  font-weight: 700; font-size: 20px;
+  margin-bottom: 20px; letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.product-card.featured .product-side .pval { color: var(--white); }
+
+/* ============ RULES / SI NO ============ */
+.rules-sino {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.sino-cell { background: var(--black); padding: 24px 28px; }
+.sino-cell.si { }
+.sino-cell.no { color: var(--muted); }
+.sino-cell .tag {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sino-cell.si .tag { color: var(--red); }
+.sino-cell.no .tag { color: var(--muted-2); }
+.sino-cell p { margin: 0; font-size: 16px; line-height: 1.4; }
+.sino-cell.no p { text-decoration: line-through; text-decoration-color: var(--red); }
+
+/* numbered rules list */
+.rules-list {
+  display: grid; gap: 16px;
+  margin-bottom: 56px;
+}
+.rules-list .rule-row {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+.rules-list .rule-row:first-child { border-top: none; padding-top: 0; }
+.rules-list .rule-row .n {
+  font-family: var(--f-mono); font-size: 12px;
+  color: var(--red); letter-spacing: 0.14em;
+}
+.rules-list .rule-row h5 {
+  margin: 0 0 8px; font-weight: 700;
+  font-size: 22px; letter-spacing: -0.01em;
+}
+.rules-list .rule-row p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; max-width: 70ch; }
+.rules-list .rule-row .ex {
+  margin-top: 14px;
+  font-family: var(--f-mono);
+  font-size: 13px; color: var(--muted);
+  padding: 12px 16px;
+  border-left: 2px solid var(--red);
+  background: var(--ink-80);
+  font-style: normal;
+}
+
+/* ============ APPLICATIONS ============ */
+.apps {
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 24px;
+}
+.app {
+  background: var(--ink-80);
+  border: 1px solid var(--line);
+  padding: 32px;
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+}
+.app.tall { grid-row: span 2; min-height: 600px; }
+.app-label {
+  position: absolute; top: 20px; left: 20px;
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* social post IG */
+.ig-post {
+  background: var(--black);
+  aspect-ratio: 1/1;
+  padding: 36px;
+  margin: 40px auto 0;
+  max-width: 340px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 1px solid var(--line);
+}
+.ig-post .head {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--red);
+  display: flex; justify-content: space-between;
+}
+.ig-post h3 {
+  font-weight: 900; font-size: 36px;
+  line-height: 0.95; letter-spacing: -0.03em;
+  margin: 0; text-transform: uppercase;
+}
+.ig-post h3 .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.ig-post .foot {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.ig-post .foot .wordmark { font-size: 16px; color: var(--white); letter-spacing: -0.04em; }
+
+/* podcast */
+.pod {
+  background: var(--black);
+  aspect-ratio: 1/1;
+  margin: 40px auto 0;
+  max-width: 340px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+}
+.pod::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, color-mix(in oklab, var(--red) 18%, transparent), transparent 40%);
+  pointer-events: none;
+}
+.pod .tag {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted);
+}
+.pod h3 {
+  font-weight: 900; font-size: 30px; line-height: 1;
+  letter-spacing: -0.03em; text-transform: uppercase;
+  margin: 0;
+}
+.pod .ep { font-family: var(--f-mono); color: var(--red); font-size: 11px; letter-spacing: 0.14em; }
+
+/* biz card */
+.bizstage {
+  margin: 40px auto 0;
+  max-width: 420px;
+  position: relative; height: 240px;
+}
+.bcard {
+  position: absolute;
+  width: 320px; height: 190px;
+  padding: 22px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bcard.front {
+  background: #000000; color: #FFFFFF;
+  border: 1px solid #222222;
+  left: 0; top: 0;
+  transform: rotate(-4deg);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
+}
+.bcard.back {
+  background: #000000; color: #FFFFFF;
+  border: 1px solid #222222;
+  right: 0; top: 30px;
+  transform: rotate(3deg);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+}
+.bcard .name {
+  font-weight: 700; font-size: 20px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.bcard .role {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 4px;
+}
+.bcard .info {
+  font-family: var(--f-mono); font-size: 10px;
+  letter-spacing: 0.08em; color: #888888;
+  line-height: 1.6;
+}
+.bcard .wordmark {
+  font-size: 14px; letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+/* newsletter */
+.news {
+  background: #FFFFFF; color: #000000;
+  padding: 28px;
+  margin: 40px auto 0;
+  max-width: 340px;
+  aspect-ratio: 3/4;
+  display: flex; flex-direction: column;
+}
+.news .k { font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; display: flex; justify-content: space-between; }
+.news h2 { font-weight: 900; font-size: 30px; letter-spacing: -0.03em; line-height: 0.95; margin: 0 0 20px; text-transform: uppercase; }
+.news h2 .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.news hr { border: none; border-top: 1px solid #ddd; margin: 0 0 18px; }
+.news ol { margin: 0; padding: 0; list-style: none; counter-reset: c; }
+.news ol li { padding: 10px 0 10px 36px; position: relative; font-size: 12px; line-height: 1.4; border-top: 1px solid #eee; counter-increment: c; }
+.news ol li:first-child { border-top: none; }
+.news ol li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; top: 12px; font-family: var(--f-mono); font-size: 10px; color: var(--red); letter-spacing: 0.1em; }
+.news footer { margin-top: auto; padding-top: 16px; font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.14em; color: #888; display: flex; justify-content: space-between; }
+
+/* ============ FOOTER ============ */
+.endblock {
+  padding: 120px 0;
+  text-align: center;
+}
+.endblock .close {
+  font-size: clamp(64px, 10vw, 140px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  text-transform: uppercase;
+  margin: 0;
+}
+.endblock .close .dot {
+  display: inline-block; width: 0.14em; height: 0.14em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.05em); margin-left: 0.04em;
+  box-shadow: 0 0 40px color-mix(in oklab, var(--red) 60%, transparent);
+}
+.endblock p {
+  margin: 32px 0 0;
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============ TWEAKS PANEL ============ */
+.tweaks {
+  position: fixed; right: 24px; bottom: 24px;
+  width: 260px;
+  background: var(--ink-60);
+  border: 1px solid var(--line);
+  padding: 18px;
+  z-index: 50;
+  display: none;
+  font-size: 13px;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+.tweaks.on { display: block; }
+.tweaks-toggle {
+  position: fixed; right: 24px; bottom: 24px; z-index: 49;
+  background: var(--black); color: var(--white);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  transition: border-color .15s, color .15s;
+}
+.tweaks-toggle:hover { border-color: var(--red); color: var(--red); }
+.tweaks-toggle .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; display: inline-block; }
+.tweaks.on + .tweaks-toggle { display: none; }
+.tweaks h5 {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+  margin: 0 0 14px; display: flex; align-items: center; gap: 8px;
+}
+.tweaks h5 .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+.tweak-row { margin-bottom: 14px; }
+.tweak-row label { display: block; font-size: 10px; color: var(--muted); margin-bottom: 8px; font-family: var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.tweak-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tweak-opts.three { grid-template-columns: 1fr 1fr 1fr; }
+.tweak-opt {
+  border: 1px solid var(--line);
+  padding: 8px 10px; font-size: 11px; cursor: pointer;
+  background: var(--black); color: var(--white);
+  font-family: var(--f-mono); letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all .15s;
+}
+.tweak-opt.on { background: var(--red); border-color: var(--red); color: var(--white); }
+
+/* ============ LIBRO ============ */
+.book-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.book-stage {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--ink-80);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px;
+}
+.book-stage::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(255,45,45,0.18), transparent 70%);
+  pointer-events: none;
+}
+.book-cover {
+  position: relative;
+  width: 82%;
+  aspect-ratio: 4/5;
+  box-shadow: 0 60px 100px -30px rgba(0,0,0,0.8), 0 0 0 1px var(--line);
+  transform: perspective(1400px) rotateY(-8deg) rotateX(2deg);
+  transform-origin: left center;
+  overflow: hidden;
+}
+.book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.book-cover::after {
+  content: "";
+  position: absolute; left: 0; top: 0; width: 24px; height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.5), transparent);
+}
+.book-info .eyebrow {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.18em; color: var(--red);
+  text-transform: uppercase; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.book-info .eyebrow::before {
+  content: ""; display: inline-block; width: 28px; height: 1px; background: var(--red);
+}
+.book-info h3 {
+  font-weight: 900; font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.03em; line-height: 0.92;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+.book-info h3 .dot {
+  display: inline-block; width: 0.14em; height: 0.14em;
+  background: var(--red); border-radius: 50%;
+  transform: translateY(-0.05em); margin-left: 0.04em;
+}
+.book-info .author {
+  font-family: var(--f-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 32px;
+}
+.book-info p {
+  font-size: 17px; line-height: 1.55; color: var(--muted);
+  margin: 0 0 28px; max-width: 52ch;
+}
+.book-specs {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+  margin-top: 32px;
+}
+.book-specs > div {
+  background: var(--black); padding: 18px 20px;
+}
+.book-specs dt {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase; margin-bottom: 6px;
+}
+.book-specs dd { margin: 0; font-weight: 600; font-size: 15px; }
+
+/* ============ PAPELERIA ============ */
+.stationery {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+}
+.stn {
+  background: var(--ink-80);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+.stn-label {
+  position: absolute; top: 20px; left: 20px; z-index: 3;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.stn-label b { color: var(--red); margin-right: 8px; }
+
+/* letterhead */
+.letterhead {
+  grid-row: span 2;
+  padding: 60px;
+  display: flex; align-items: center; justify-content: center;
+}
+.letter-sheet {
+  background: #FFFFFF;
+  color: #000000;
+  width: 100%; max-width: 420px;
+  aspect-ratio: 210/297;
+  padding: 36px 32px;
+  box-shadow: 0 60px 100px -30px rgba(0,0,0,0.6);
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.letter-sheet::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 6px; background: #000000;
+}
+.letter-sheet::before {
+  content: ""; position: absolute; right: 32px; bottom: 20px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+}
+.letter-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px; margin-bottom: 28px;
+}
+.letter-logo {
+  font-weight: 900; font-size: 24px; letter-spacing: -0.04em;
+  line-height: 1;
+}
+.letter-logo .dot { display: inline-block; width: 0.18em; height: 0.18em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.02em; }
+.letter-logo .emp { font-weight: 300; color: #888; font-size: 0.6em; letter-spacing: 0; margin-left: 4px; }
+.letter-meta {
+  font-family: var(--f-mono); font-size: 8px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #888; text-align: right; line-height: 1.6;
+}
+.letter-body { flex: 1; font-size: 9px; line-height: 1.6; color: #555; }
+.letter-body .to {
+  font-family: var(--f-mono); font-size: 8px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #aaa; margin-bottom: 14px;
+}
+.letter-body .greet {
+  font-weight: 900; font-size: 16px; color: #000000;
+  letter-spacing: -0.02em; margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.letter-body .greet .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.letter-body p { margin: 0 0 8px; }
+.letter-sign {
+  margin-top: auto; padding-top: 20px;
+  font-family: var(--f-mono); font-size: 8px;
+  letter-spacing: 0.1em; color: #888;
+  text-transform: uppercase;
+}
+
+/* folder */
+.folder {
+  padding: 40px;
+  background: #FFFFFF;
+  color: #000000;
+  min-height: 260px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  position: relative;
+}
+.folder::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 8px;
+  background: #000000;
+}
+.folder::after {
+  content: ""; position: absolute; top: 20px; right: 40px;
+  width: 60px; height: 1px; background: var(--black); opacity: 0.15;
+}
+.folder h4 {
+  font-weight: 900; font-size: 44px; letter-spacing: -0.04em;
+  text-transform: uppercase; line-height: 0.9;
+  margin: 0 0 6px;
+}
+.folder h4 .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.folder .sub {
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #666;
+}
+.folder .stamp {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--red);
+}
+
+/* envelope */
+.envelope {
+  padding: 40px;
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 260px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1a1a1a;
+}
+/* Diagonal flap crease — subtle, above the content */
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 46%, rgba(255,255,255,0.04) 46%, rgba(255,255,255,0.04) 54%, transparent 54%);
+  pointer-events: none;
+}
+.envelope .from {
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px;
+  max-width: 220px; line-height: 1.6;
+  position: relative; z-index: 2;
+}
+.envelope .mark {
+  display: flex; align-items: baseline; gap: 4px;
+  font-weight: 900; font-size: 32px; letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+  position: relative; z-index: 2;
+}
+.envelope .mark .dot { display: inline-block; width: 0.18em; height: 0.18em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); }
+.envelope .mark .emp { font-weight: 300; font-size: 0.55em; color: rgba(255,255,255,0.7); letter-spacing: 0; margin-left: 4px; }
+.envelope .stn-label { color: rgba(255,255,255,0.55); z-index: 3; }
+.envelope .stn-label b { color: var(--red); }
+.envelope .stripe {
+  position: absolute;
+  right: 0; top: 0;
+  width: 100px; height: 100px;
+  background: var(--red);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  z-index: 1;
+}
+
+/* notebook */
+.notebook {
+  padding: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--ink-80);
+  min-height: 380px;
+}
+.nb-stage {
+  position: relative;
+  width: 240px; height: 320px;
+}
+.nb-book {
+  position: absolute; width: 100%; height: 100%;
+  background: #000000;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 24px 20px;
+}
+.nb-book::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 8px;
+  background: repeating-linear-gradient(0deg, var(--red) 0, var(--red) 2px, transparent 2px, transparent 14px);
+}
+.nb-book .top {
+  font-family: var(--f-mono); font-size: 8px;
+  letter-spacing: 0.2em; color: var(--muted);
+  text-transform: uppercase;
+}
+.nb-book .mono {
+  font-weight: 900; font-size: 28px;
+  letter-spacing: -0.04em; line-height: 0.9;
+  text-transform: uppercase;
+}
+.nb-book .mono .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.02em; }
+.nb-book .num {
+  font-family: var(--f-mono); font-size: 9px;
+  letter-spacing: 0.2em; color: var(--red);
+  text-transform: uppercase;
+}
+
+/* pen */
+.pen-stage {
+  padding: 60px 40px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 220px;
+  background: var(--ink-80);
+}
+.pen {
+  width: 100%; max-width: 360px;
+  height: 24px;
+  background: #000000;
+  border: 1px solid #222222;
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 14px;
+}
+.pen::before {
+  content: ""; position: absolute; right: -20px; top: 50%;
+  width: 0; height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid var(--red);
+  transform: translateY(-50%);
+}
+.pen::after {
+  content: ""; position: absolute; left: -14px; top: 50%;
+  width: 14px; height: 8px; background: var(--ink-40);
+  transform: translateY(-50%);
+}
+.pen .mk {
+  font-weight: 900; font-size: 10px;
+  letter-spacing: -0.02em; color: #FFFFFF;
+  text-transform: uppercase;
+}
+.pen .mk .dot { display: inline-block; width: 3px; height: 3px; background: var(--red); border-radius: 50%; margin-left: 1px; transform: translateY(-2px); }
+.pen .trim {
+  font-family: var(--f-mono); font-size: 7px;
+  letter-spacing: 0.2em; color: var(--muted);
+}
+
+/* ============ MERCH (rebuilt with SVG) ============ */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.merch {
+  grid-column: span 2;
+  background: radial-gradient(ellipse 80% 80% at 50% 30%, #1a1a1a, #000);
+  border: 1px solid #1e1e1e;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.merch.big { grid-column: span 3; min-height: 440px; }
+.merch.tall { grid-row: span 2; }
+.merch .label {
+  position: absolute; top: 18px; left: 18px; z-index: 4;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #888;
+}
+.merch .label b { color: var(--red); margin-right: 8px; }
+.merch .variant {
+  position: absolute; top: 18px; right: 18px; z-index: 4;
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #666;
+  padding: 3px 8px; border: 1px solid #222; border-radius: 999px;
+}
+.merch-viz {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 20px 20px;
+}
+.merch-viz svg { max-width: 100%; max-height: 100%; width: auto; height: auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6)); }
+.merch-foot {
+  padding: 18px 24px 22px;
+  border-top: 1px solid #1a1a1a;
+  background: rgba(0,0,0,0.3);
+}
+.merch-foot h5 {
+  font-weight: 900; font-size: 18px; letter-spacing: -0.02em;
+  text-transform: uppercase; margin: 0 0 4px; color: #fff;
+}
+.merch-foot h5 .dot { display: inline-block; width: 0.14em; height: 0.14em; background: var(--red); border-radius: 50%; transform: translateY(-0.05em); margin-left: 0.04em; }
+.merch-foot .cap {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #888;
+}
+
+/* cap */
+.cap-obj {
+  width: 260px; height: 150px;
+  position: relative;
+}
+.cap-obj .crown {
+  position: absolute; left: 20px; top: 0;
+  width: 160px; height: 100px;
+  background: #000000;
+  border-radius: 80px 80px 20px 20px;
+  box-shadow: inset -20px -10px 40px rgba(255,255,255,0.04), 0 20px 40px -10px rgba(0,0,0,0.6);
+}
+.cap-obj .visor {
+  position: absolute; left: 0; top: 85px;
+  width: 220px; height: 32px;
+  background: #000000;
+  border-radius: 50% 50% 40% 40% / 100% 100% 100% 100%;
+  box-shadow: 0 20px 30px -10px rgba(0,0,0,0.6);
+}
+.cap-obj .emb {
+  position: absolute; left: 70px; top: 36px; z-index: 2;
+  font-weight: 900; font-size: 22px; letter-spacing: -0.04em;
+  color: #FFFFFF; line-height: 1;
+}
+.cap-obj .emb .dot { display: inline-block; width: 6px; height: 6px; background: var(--red); border-radius: 50%; margin-left: 2px; transform: translateY(-6px); }
+
+/* shirt */
+.shirt-obj {
+  width: 280px; height: 300px;
+  position: relative;
+}
+.shirt-obj .body {
+  position: absolute; inset: 40px 0 0 0;
+  background: #000000;
+  clip-path: polygon(0 12%, 22% 0, 35% 8%, 50% 14%, 65% 8%, 78% 0, 100% 12%, 100% 100%, 0 100%);
+  box-shadow: inset 0 40px 60px rgba(255,255,255,0.02);
+}
+.shirt-obj .neck {
+  position: absolute; left: 50%; top: 32px; transform: translateX(-50%);
+  width: 60px; height: 20px;
+  border: 3px solid #000000;
+  background: #F5F5F5;
+  border-top: none;
+  border-radius: 0 0 40px 40px;
+  z-index: 2;
+}
+.shirt-obj .emb {
+  position: absolute; left: 50%; top: 100px; transform: translateX(-50%);
+  font-weight: 900; font-size: 28px; letter-spacing: -0.04em;
+  line-height: 1; z-index: 3;
+  color: #FFFFFF;
+}
+.shirt-obj .emb .dot { display: inline-block; width: 6px; height: 6px; background: var(--red); border-radius: 50%; margin-left: 2px; transform: translateY(-8px); }
+.shirt-obj .tagline {
+  position: absolute; left: 50%; top: 150px; transform: translateX(-50%);
+  font-family: var(--f-mono); font-size: 8px; letter-spacing: 0.3em;
+  color: var(--muted); text-transform: uppercase; z-index: 3;
+  white-space: nowrap;
+}
+
+/* polo (uniform) */
+.polo-obj {
+  width: 280px; height: 320px;
+  position: relative;
+}
+.polo-obj .body {
+  position: absolute; inset: 50px 0 0 0;
+  background: #FFFFFF;
+  clip-path: polygon(0 10%, 22% 0, 38% 10%, 50% 20%, 62% 10%, 78% 0, 100% 10%, 100% 100%, 0 100%);
+}
+.polo-obj .placket {
+  position: absolute; left: 50%; top: 70px; transform: translateX(-50%);
+  width: 4px; height: 80px; background: #d5d5d5;
+}
+.polo-obj .placket::before, .polo-obj .placket::after {
+  content: ""; position: absolute; left: -2px;
+  width: 4px; height: 4px; border-radius: 50%; background: #000000;
+}
+.polo-obj .placket::before { top: 20px; }
+.polo-obj .placket::after { top: 50px; }
+.polo-obj .collar-l, .polo-obj .collar-r {
+  position: absolute; top: 50px; width: 30px; height: 24px;
+  background: #FFFFFF;
+  border: 1px solid #d5d5d5;
+  z-index: 2;
+}
+.polo-obj .collar-l { left: 50%; transform: translateX(-32px) rotate(-20deg); transform-origin: top right; border-right: none;}
+.polo-obj .collar-r { left: 50%; transform: translateX(2px) rotate(20deg); transform-origin: top left; border-left: none;}
+.polo-obj .emb {
+  position: absolute; right: 50px; top: 120px;
+  font-weight: 900; font-size: 12px; letter-spacing: -0.03em;
+  color: #000000; line-height: 1;
+}
+.polo-obj .emb .dot { display: inline-block; width: 3px; height: 3px; background: var(--red); border-radius: 50%; margin-left: 1px; transform: translateY(-4px); }
+
+/* notebook obj in merch */
+.mug-obj {
+  width: 200px; height: 180px;
+  position: relative;
+}
+.mug-obj .cup {
+  position: absolute; left: 0; top: 0;
+  width: 140px; height: 160px;
+  background: #000000;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+}
+.mug-obj .handle {
+  position: absolute; left: 130px; top: 40px;
+  width: 60px; height: 80px;
+  border: 10px solid #000000;
+  border-radius: 50%;
+  border-left-color: transparent;
+}
+.mug-obj .emb {
+  position: absolute; left: 16px; top: 66px;
+  font-weight: 900; font-size: 20px; letter-spacing: -0.04em;
+  line-height: 0.9; color: #FFFFFF; text-transform: uppercase;
+}
+.mug-obj .emb .dot { display: inline-block; width: 5px; height: 5px; background: var(--red); border-radius: 50%; margin-left: 1px; transform: translateY(-6px); }
+.mug-obj .emb small { display: block; font-family: var(--f-mono); font-size: 7px; letter-spacing: 0.2em; font-weight: 400; color: var(--muted); margin-top: 4px; }
+
+/* tote */
+.tote-obj {
+  width: 200px; height: 240px;
+  position: relative;
+}
+.tote-obj .body {
+  position: absolute; top: 40px; left: 0; right: 0; bottom: 0;
+  background: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
+}
+.tote-obj .handle-l, .tote-obj .handle-r {
+  position: absolute; top: 0; width: 18px; height: 60px;
+  border: 3px solid #000000;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+}
+.tote-obj .handle-l { left: 40px; }
+.tote-obj .handle-r { right: 40px; }
+.tote-obj .emb {
+  position: absolute; left: 50%; top: 130px; transform: translateX(-50%);
+  font-weight: 900; font-size: 22px; letter-spacing: -0.04em;
+  color: #000000; text-align: center; line-height: 0.95;
+  text-transform: uppercase; white-space: nowrap;
+}
+.tote-obj .emb .dot { display: inline-block; width: 5px; height: 5px; background: var(--red); border-radius: 50%; margin-left: 1px; transform: translateY(-6px); }
+.tote-obj .tag {
+  display: block; font-family: var(--f-mono); font-size: 7px;
+  letter-spacing: 0.2em; color: #666; font-weight: 400; margin-top: 6px;
+}
+
+/* hoodie */
+.hood-obj {
+  width: 280px; height: 320px;
+  position: relative;
+}
+.hood-obj .body {
+  position: absolute; inset: 40px 0 0 0;
+  background: #000000;
+  clip-path: polygon(0 10%, 20% 0, 36% 10%, 48% 22%, 52% 22%, 64% 10%, 80% 0, 100% 10%, 100% 100%, 0 100%);
+}
+.hood-obj .hood-shape {
+  position: absolute; left: 50%; top: 30px; transform: translateX(-50%);
+  width: 80px; height: 50px;
+  background: #F5F5F5;
+  border: 2px solid #000000;
+  border-radius: 50% 50% 30% 30% / 70% 70% 100% 100%;
+  z-index: 2;
+}
+.hood-obj .pocket {
+  position: absolute; left: 50%; top: 170px; transform: translateX(-50%);
+  width: 180px; height: 60px;
+  border-top: 2px solid #222;
+  border-radius: 60px 60px 0 0;
+}
+.hood-obj .emb {
+  position: absolute; left: 50%; top: 110px; transform: translateX(-50%);
+  font-weight: 900; font-size: 14px; letter-spacing: -0.03em;
+  color: #FFFFFF; line-height: 1;
+}
+.hood-obj .emb .dot { display: inline-block; width: 4px; height: 4px; background: var(--red); border-radius: 50%; margin-left: 1px; transform: translateY(-5px); }
+
+/* pin */
+.pin-obj {
+  width: 180px; height: 180px;
+  position: relative;
+}
+.pin-obj .disc {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #1a1a1a, #000000);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6), inset 0 0 0 2px #222;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.pin-obj .disc::after {
+  content: ""; position: absolute; top: 12%; left: 22%;
+  width: 20%; height: 12%; border-radius: 50%;
+  background: rgba(255,255,255,0.15); filter: blur(4px);
+}
+.pin-obj .mark {
+  font-weight: 900; font-size: 34px; letter-spacing: -0.04em;
+  color: #FFFFFF; line-height: 1;
+  text-transform: uppercase;
+}
+.pin-obj .mark .dot { display: inline-block; width: 8px; height: 8px; background: var(--red); border-radius: 50%; margin-left: 2px; transform: translateY(-8px); }
+
+/* responsive */
+@media (max-width: 960px) {
+  .wrap, .nav-inner { padding-left: 20px; padding-right: 20px; }
+  .sect-head, .hero-row { grid-template-columns: 1fr; gap: 24px; }
+  .ola-grid, .pillars, .logo-grid, .color-hero, .avatar-grid, .rules-sino, .apps, .funnel-row { grid-template-columns: 1fr; }
+  .faro-phases, .fw-grid, .rules { grid-template-columns: 1fr 1fr; }
+  .anti { grid-template-columns: 1fr 1fr; }
+  .book-wrap, .stationery, .merch-grid { grid-template-columns: 1fr; }
+  .merch-grid .span-2 { grid-column: span 1; }
+  .book-specs { grid-template-columns: 1fr; }
+  .type-spec { grid-template-columns: 1fr; gap: 20px; }
+  .nav-links { display: none; }
+  .type-scale { grid-template-columns: 80px 100px 1fr; font-size: 10px; }
+  .metaphor-table { grid-template-columns: 1fr; }
+  /* New sections */
+  .hero h1 { font-size: clamp(52px, 16vw, 120px) !important; }
+  .sect-title { font-size: clamp(40px, 10vw, 88px) !important; overflow-wrap: break-word; }
+  /* Pillars pescador/surfista side-by-side -> stack */
+  .pillars[style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+  /* 3 estados: force 1fr */
+  section#esencia > .wrap > div[style*="grid-template-columns: 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  /* Misión Visión Promesa: 2 col */
+  section#esencia .fw-grid { grid-template-columns: 1fr 1fr !important; }
+  /* Historia Santi 5 actos -> 1 col */
+  section#metafora div[style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
+  /* Timing 4 cols -> 2 cols */
+  section#metafora div[style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  /* Reencuentro 2col -> stack */
+  section#metafora div[style*="grid-template-columns: 1fr 1.4fr"] { grid-template-columns: 1fr !important; padding: 32px !important; gap: 32px !important; }
+  /* Rol del Faro */
+  section#faro div[style*="grid-template-columns: 200px 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+  /* Bigger quote in faro */
+  section#faro > .wrap > div[style*="padding: 56px 40px"] p { font-size: clamp(32px, 7vw, 54px) !important; }
+  /* Hero meta */
+  .hero-meta { grid-template-columns: 1fr 1fr !important; }
+  /* Envelope stripe smaller */
+  .envelope .stripe { width: 72px !important; height: 72px !important; }
+}
+
+@media (max-width: 640px) {
+  .wrap, .nav-inner { padding-left: 16px; padding-right: 16px; }
+  .hero { padding: 100px 0 60px !important; }
+  section { padding: 80px 0 !important; }
+  .sect-num big { font-size: 56px !important; }
+  .faro-phases, .fw-grid, .rules { grid-template-columns: 1fr !important; }
+  .anti { grid-template-columns: 1fr !important; }
+  section#esencia .fw-grid { grid-template-columns: 1fr !important; }
+  section#metafora div[style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
+  /* TIMING giant word */
+  section#metafora h3[style*="clamp(48px"] { font-size: clamp(48px, 18vw, 96px) !important; }
+  /* Logo stage shrink */
+  .wordmark { font-size: 48px !important; }
+  .logo-cell .wordmark { font-size: 44px !important; }
+  /* Business card: let it wrap */
+  .bizstage { min-height: 380px !important; }
+  .bcard { width: 260px !important; height: 160px !important; }
+  /* Merch stage shrink */
+  .merch-item svg { max-width: 100% !important; height: auto !important; }
+  /* Envelope smaller font */
+  .envelope .mark { font-size: 24px !important; }
+  /* Letter sheet */
+  .letter-sheet { padding: 32px !important; }
+  /* Book cover */
+  .book-cover img { max-width: 100% !important; }
+  /* Hero meta single col */
+  .hero-meta { grid-template-columns: 1fr !important; }
+  /* Reduce huge numbers */
+  div[style*="font-size: 48px"][style*="color: var(--line)"] { font-size: 32px !important; }
+  /* Color hero big hex */
+  .color-hero h3, .color-hero .big { font-size: clamp(40px, 12vw, 80px) !important; }
+  /* Prevent horizontal overflow */
+  body { overflow-x: hidden; }
+  /* Images stay contained */
+  img { max-width: 100%; height: auto; }
+}
+
+/* Universal safeties */
+html, body { overflow-x: hidden; }
+img, svg { max-width: 100%; }
+</style>
+</head>
+<body>
+
+<!-- =============== NAV =============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="ola">OLA<span class="dot"></span></span>
+      <span class="emp">empresario</span>
+    </div>
+    <div class="nav-links">
+      <a href="#esencia">Esencia</a>
+      <a href="#faro">El Faro</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#voz">Voz</a>
+      <a href="#metafora">Metáfora</a>
+      <a href="#stack">Stack</a>
+      <a href="#libro">Libro</a>
+      <a href="#papeleria">Papelería</a>
+      <a href="#merch">Merch</a>
+      <a href="#reglas">Reglas</a>
+    </div>
+    <div class="nav-meta">
+      <span class="dot"></span>
+      V 1.0 · 2026
+    </div>
+  </div>
+</nav>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Brand Kit · Identidad · Voz · Sistema</div>
+    <h1>Monta<br/>la ola<span class="dot"></span></h1>
+    <div class="hero-row">
+      <p class="hero-sub">
+        <b>OLAempresario</b> no es una escuela de negocios. Es un sistema de rescate para emprendedores que ya están en el mar y no saben a dónde están remando. Esta guía define el Sistema Faro: su voz, su identidad, sus reglas.
+      </p>
+      <dl class="hero-meta">
+        <div><dt>Audiencia</dt><dd>Emprendedores $0–$1M</dd></div>
+        <div><dt>Región</dt><dd>Hispanoamérica</dd></div>
+        <div><dt>Arquetipo</dt><dd>El Sabio · Viejo lobo de mar</dd></div>
+        <div><dt>URL</dt><dd>olaempresario.com</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<!-- =============== 01 ESENCIA =============== -->
+<section id="esencia">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>01<em>.</em></big>La Esencia</div>
+      <div>
+        <h2 class="sect-title">Nace en la playa,<br/>no en un aula<span class="dot"></span></h2>
+        <p class="sect-desc">OLAempresario nace mirando surfistas y viendo emprendedores. El pescador rema con fuerza contra el mar. El surfista lo lee. Esa diferencia —timing— es la única que separa al empresario agotado del empresario maestro.</p>
+      </div>
+    </div>
+
+    <!-- Pescador vs Surfista: historia fundacional -->
+    <div class="pillars" style="grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px;">
+      <div class="pillar" style="background: #0a0a0a; border-color: #1a1a1a;">
+        <h5 style="color: rgba(255,255,255,0.5);"><span class="dot"></span>El Pescador</h5>
+        <p style="font-size: 17px; line-height: 1.55; color: rgba(255,255,255,0.9); margin: 0 0 16px;">Sale al mar con fuerza. Rema, suda, lanza redes, vuelve cansado. Si el mar no le da peces, rema más duro.</p>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.55); margin: 0;">Así opera el 90% de los emprendedores: esfuerzo bruto contra un mar que no se pelea. Confunde actividad con avance.</p>
+      </div>
+      <div class="pillar" style="border-color: var(--red);">
+        <h5><span class="dot"></span>El Surfista</h5>
+        <p style="font-size: 17px; line-height: 1.55; margin: 0 0 16px;">No pelea con el mar: lo lee. Observa la serie, mide la corriente, espera. Cuando llega su ola, entra en el momento preciso.</p>
+        <p style="font-size: 14px; color: var(--muted); margin: 0;">Eso se llama <b style="color: var(--ink);">timing</b>. Es la diferencia entre caer y volar. Y es lo que un buen empresario hace con el mercado.</p>
+      </div>
+    </div>
+
+    <!-- O L A -->
+    <div class="ola-grid">
+      <div class="ola-letter">
+        <div>
+          <div class="ola-letter-meta">01 · Principio</div>
+          <big>O</big>
+        </div>
+        <div>
+          <h4>Observar</h4>
+          <p>Antes de remar, mirar. Diagnosticar antes de prescribir. Sin lectura del mar, toda brazada es cansancio elegante.</p>
+        </div>
+      </div>
+      <div class="ola-letter">
+        <div>
+          <div class="ola-letter-meta">02 · Principio</div>
+          <big>L</big>
+        </div>
+        <div>
+          <h4>Liderar</h4>
+          <p>El dueño es el capitán. El Faro no rescata dos veces. Nadie salva al que no decide subir al bote.</p>
+        </div>
+      </div>
+      <div class="ola-letter">
+        <div>
+          <div class="ola-letter-meta">03 · Principio</div>
+          <big>A<span class="dot"></span></big>
+        </div>
+        <div>
+          <h4>Avanzar</h4>
+          <p>Imperfecto pero en movimiento. El negocio perfecto que no arranca vale cero. Primero fundamentos, después escalar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Misión · Visión · Promesa -->
+    <div class="fw-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 80px;">
+      <div class="fw">
+        <p class="sub">Misión</p>
+        <h4 style="font-size: 28px; line-height: 1.1;">Convertir pescadores cansados en surfistas con timing<span class="dot"></span></h4>
+        <p style="color: var(--muted); margin-top: 16px;">Que dejen de remar contra el mercado y aprendan a leerlo.</p>
+      </div>
+      <div class="fw">
+        <p class="sub">Visión</p>
+        <h4 style="font-size: 28px; line-height: 1.1;">Ser el Faro de habla hispana para empresarios entre $0 y $1M<span class="dot"></span></h4>
+        <p style="color: var(--muted); margin-top: 16px;">No el más popular. El más útil. El que se queda cuando los demás se van.</p>
+      </div>
+      <div class="fw">
+        <p class="sub">Promesa</p>
+        <h4 style="font-size: 28px; line-height: 1.1;">Hacemos que tu negocio funcione sin ti<span class="dot"></span></h4>
+        <p style="color: var(--muted); margin-top: 16px;">No es abandonar el barco. Es dejar de ser su cuello de botella. Que fluya con la ola aunque el capitán descanse.</p>
+      </div>
+    </div>
+
+    <!-- Los tres estados -->
+    <div style="margin-top: 80px; padding: 48px 40px; border: 1px solid var(--line); background: var(--paper);">
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 32px;">Los tres estados del OLA empresario</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line);">
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--f-mono); font-size: 48px; font-weight: 700; letter-spacing: -2px; color: var(--line); line-height: 1; margin-bottom: 16px;">01</div>
+          <h4 style="font-size: 32px; letter-spacing: -0.04em; margin: 0 0 12px;">PESCADOR</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 15px;">Rema con fuerza. En círculos. Confunde actividad con avance.</p>
+        </div>
+        <div style="padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+          <div style="font-family: var(--f-mono); font-size: 48px; font-weight: 700; letter-spacing: -2px; color: var(--line); line-height: 1; margin-bottom: 16px;">02</div>
+          <h4 style="font-size: 32px; letter-spacing: -0.04em; margin: 0 0 12px;">NAVEGANTE</h4>
+          <p style="margin: 0; color: var(--muted); font-size: 15px;">Ya fue rescatado. Ve el Faro. Empieza a orientarse.</p>
+        </div>
+        <div style="padding: 32px; border-bottom: 1px solid var(--line); background: #0a0a0a; color: #fff;">
+          <div style="font-family: var(--f-mono); font-size: 48px; font-weight: 700; letter-spacing: -2px; color: var(--red); line-height: 1; margin-bottom: 16px;">03</div>
+          <h4 style="font-size: 32px; letter-spacing: -0.04em; margin: 0 0 12px; color: #fff;">SURFISTA<span class="dot"></span></h4>
+          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 15px;">Tiene timing. Lee la ola. Fluye con propósito.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars" style="margin-top: 80px;">
+      <div class="pillar">
+        <h5><span class="dot"></span>Lo que somos</h5>
+        <ul>
+          <li>Un sistema: el Sistema Faro, F1 → F5. Pasos, herramientas, disciplina.</li>
+          <li>Un mentor de carne y hueso: Fernando, respaldado por El Faro como voz de marca.</li>
+          <li>Una tribu: surfistas en formación que comparten bitácora, no trucos.</li>
+          <li>Una biblioteca viva: libro, guías, plantillas, herramientas con IA, comunidad.</li>
+        </ul>
+      </div>
+      <div class="pillar negative">
+        <h5><span class="dot"></span>Lo que no somos</h5>
+        <ul>
+          <li>Gurús de reels motivacionales.</li>
+          <li>Vendedores de atajos, hacks o "el secreto" del 1%.</li>
+          <li>Promesas mágicas de facturaciones en 30 días.</li>
+          <li>No juzgamos al pescador cansado; sí exigimos al que ya decidió aprender a surfear.</li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote class="faro-quote">
+      "No nades más fuerte. Mira mejor."
+      <footer>— El Faro</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- =============== 02 EL FARO =============== -->
+<section id="faro">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>02<em>.</em></big>El Faro</div>
+      <div>
+        <h2 class="sect-title">La voz<br/>que no grita<span class="dot"></span></h2>
+        <p class="sect-desc">El Faro es el personaje-voz. No es un logo, no es una mascota, no es Fernando. Es el mentor que le habla al navegante cuando se está ahogando en operaciones, dudas o ruido.</p>
+      </div>
+    </div>
+
+    <!-- perfil del faro -->
+    <div class="fw-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 0;">
+      <div class="fw">
+        <h4>Arquetipo<span class="dot"></span></h4>
+        <p class="sub">01 · Perfil</p>
+        <p style="font-size: 18px; line-height: 1.4; margin: 0;">El Sabio con alma de Viejo Lobo de Mar. Atemporal. Ha visto cerrar empresas. Ha visto abrir otras. No se emociona fácil.</p>
+      </div>
+      <div class="fw">
+        <h4>Tono<span class="dot"></span></h4>
+        <p class="sub">02 · Temperatura</p>
+        <p style="font-size: 18px; line-height: 1.4; margin: 0;">Directo, sobrio, firme. Frío cuando el negocio lo exige, cálido cuando el humano lo necesita. Nunca tibio.</p>
+      </div>
+      <div class="fw">
+        <h4>Rol<span class="dot"></span></h4>
+        <p class="sub">03 · Función</p>
+        <p style="font-size: 18px; line-height: 1.4; margin: 0;">Mentor · Auditor interno · Guardián del sistema. Dicta sentencia y receta herbal en el mismo párrafo.</p>
+      </div>
+    </div>
+
+    <blockquote class="faro-quote" style="font-size: 22px; max-width: 1100px;">
+      El Faro no siempre fue faro. Fue primero la voz que aparece cuando el pescador ya no puede con sus propias brazadas. En el libro, el Faro llega pilotando un helicóptero sobre un mar que iba a tragarse a Santi. Lo rescata, lo seca, lo sienta en la arena y le dice una frase que le queda tatuada para siempre.
+      <footer>— Historia del Faro</footer>
+    </blockquote>
+
+    <!-- La frase central -->
+    <div style="margin-top: 40px; padding: 56px 40px; background: #0a0a0a; border-left: 4px solid var(--red); position: relative;">
+      <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 24px;">La frase que lo cambia todo</div>
+      <p style="font-family: var(--f-serif, Georgia, serif); font-size: clamp(32px, 4vw, 54px); font-style: italic; line-height: 1.15; letter-spacing: -0.02em; color: #fff; margin: 0; max-width: 20ch;">"El mar no premia al que se mueve. Premia al que se orienta<span class="dot" style="vertical-align: baseline;"></span>"</p>
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 32px;">— El Faro, a Santi · del libro ¿Cuál es tu negocio?</div>
+    </div>
+
+    <!-- Rol del Faro -->
+    <div style="margin-top: 40px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--line);">
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red);">El Faro hoy</div>
+      <div style="font-size: 18px; line-height: 1.55; max-width: 62ch;">
+        <p style="margin: 0 0 16px;">No una torre inmóvil: <b>una presencia activa</b> que aparece cuando hace falta, que diagnostica antes de aconsejar, que corrige sin humillar.</p>
+        <p style="margin: 0 0 16px;">Es <b>rescatista</b> cuando el pescador se ahoga. <b>Piloto</b> cuando el navegante necesita altura. <b>Mentor</b> cuando el surfista empieza a leer su propia ola.</p>
+        <p style="margin: 0; color: var(--muted); font-style: italic;">"El Faro no te rescata dos veces. Te despierta una vez y te enseña a leer la ola."</p>
+      </div>
+    </div>
+
+    <!-- reglas de voz 5 -->
+    <div class="rules" style="margin-top: 72px;">
+      <div class="rule">
+        <div class="n">REGLA 01</div>
+        <h5>Imperativo suave</h5>
+        <p>"Respira. Ordena. Decide." No ruega, no sugiere, no implora.</p>
+      </div>
+      <div class="rule">
+        <div class="n">REGLA 02</div>
+        <h5>Metáforas sin saturar</h5>
+        <p>Una metáfora marítima por párrafo, máximo. Si necesitas dos, sobra una.</p>
+      </div>
+      <div class="rule">
+        <div class="n">REGLA 03</div>
+        <h5>Frases cortas</h5>
+        <p>Puntos firmes. Un punto al final pesa más que tres adjetivos.</p>
+      </div>
+      <div class="rule">
+        <div class="n">REGLA 04</div>
+        <h5>Nunca "usuario"</h5>
+        <p>Navegante, empresario, capitán, OLA empresario. Nunca lead, cliente, consumidor.</p>
+      </div>
+      <div class="rule">
+        <div class="n">REGLA 05</div>
+        <h5>Diagnostica antes</h5>
+        <p>El Faro nunca receta sin preguntar. Primero el dolor, luego la herramienta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 03 LOGO =============== -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>03<em>.</em></big>El Logo</div>
+      <div>
+        <h2 class="sect-title">Tres letras.<br/>Un punto<span class="dot"></span></h2>
+        <p class="sect-desc">El logo es declaración: <b>OLA</b> en peso máximo, <b>empresario</b> como firma operativa, y <b>un punto rojo</b> — el Faro — que cierra la frase. Nunca más, nunca menos.</p>
+      </div>
+    </div>
+
+    <div class="logo-grid">
+      <!-- primario negro -->
+      <div class="logo-cell" data-v="dark">
+        <div class="logo-stage">
+          <div class="wordmark" style="font-size: 72px;">
+            <span class="ola-part">OLA</span><span class="dot"></span><span class="emp-part">empresario</span>
+          </div>
+        </div>
+        <div class="logo-meta"><span>01 · Primario</span><span>Fondo oscuro</span></div>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/logo-oscuro.svg" download>Descargar SVG</a>
+          <a class="dl-btn" href="assets/logo-oscuro.png" download>Descargar PNG</a>
+        </div>
+      </div>
+
+      <!-- primario blanco -->
+      <div class="logo-cell" data-v="light">
+        <div class="logo-stage">
+          <div class="wordmark" style="font-size: 72px;">
+            <span class="ola-part">OLA</span><span class="dot"></span><span class="emp-part">empresario</span>
+          </div>
+        </div>
+        <div class="logo-meta"><span>02 · Positivo</span><span>Fondo blanco</span></div>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/logo-claro.svg" download>Descargar SVG</a>
+          <a class="dl-btn" href="assets/logo-claro.png" download>Descargar PNG</a>
+        </div>
+      </div>
+
+      <!-- monograma -->
+      <div class="logo-cell" data-v="dark">
+        <div class="logo-stage">
+          <div class="wordmark" style="font-size: 120px; flex-direction: column;">
+            <span class="ola-part" style="display: flex; align-items: baseline;">OLA<span class="dot" style="margin-left: 0.04em;"></span></span>
+          </div>
+        </div>
+        <div class="logo-meta"><span>03 · Corto</span><span>Monograma · Social</span></div>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/logo-monograma.svg" download>Descargar SVG</a>
+          <a class="dl-btn" href="assets/logo-monograma.png" download>Descargar PNG</a>
+        </div>
+      </div>
+
+      <!-- acento rojo -->
+      <div class="logo-cell" data-v="red">
+        <div class="logo-stage">
+          <div class="wordmark" style="font-size: 72px;">
+            <span class="ola-part">OLA</span><span class="dot"></span><span class="emp-part" style="color: rgba(255,255,255,0.8);">empresario</span>
+          </div>
+        </div>
+        <div class="logo-meta"><span>04 · Acento</span><span>Uso especial · campañas</span></div>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/logo-acento.svg" download>Descargar SVG</a>
+          <a class="dl-btn" href="assets/logo-acento.png" download>Descargar PNG</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- el punto rojo aislado -->
+    <div class="clearspace">
+      <div class="monogram-stage" style="color: var(--white);">
+        <div class="ring"></div>
+        <div class="ring2"></div>
+        <div class="dot"></div>
+      </div>
+      <div style="position: absolute; left: 48px; top: 36px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);">
+        El símbolo · El punto rojo
+      </div>
+      <div style="position: absolute; right: 48px; bottom: 36px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: right; max-width: 280px;">
+        No es decoración.<br/>Es el Faro. Es el final de una frase.<br/>Es el capitán que ya no duda.
+      </div>
+    </div>
+
+    <!-- reglas del punto -->
+    <div class="rules" style="margin-top: 48px;">
+      <div class="rule">
+        <div class="n">PUNTO · 01</div>
+        <h5>Uno por composición</h5>
+        <p>Dos puntos rojos cancelan el mensaje.</p>
+      </div>
+      <div class="rule">
+        <div class="n">PUNTO · 02</div>
+        <h5>Redondo perfecto</h5>
+        <p>Nunca elíptico, ni con bordes, ni en gradiente.</p>
+      </div>
+      <div class="rule">
+        <div class="n">PUNTO · 03</div>
+        <h5>No como bullet</h5>
+        <p>Nunca en listas largas. Eso diluye su peso.</p>
+      </div>
+      <div class="rule">
+        <div class="n">PUNTO · 04</div>
+        <h5>Cierra frases</h5>
+        <p>Sustituye al punto final en frases signature.</p>
+      </div>
+      <div class="rule">
+        <div class="n">PUNTO · 05</div>
+        <h5>Mínimo 8px</h5>
+        <p>Por debajo desaparece. Por encima resuena.</p>
+      </div>
+    </div>
+
+    <!-- sizes -->
+    <div class="logo-sizes">
+      <div class="size-cell">
+        <div class="wordmark" style="font-size: 48px;"><span>OLA</span><span class="dot"></span><span class="emp-part">empresario</span></div>
+        <div class="size-label">Desktop · 400px+</div>
+      </div>
+      <div class="size-cell">
+        <div class="wordmark" style="font-size: 32px;"><span>OLA</span><span class="dot"></span><span class="emp-part">empresario</span></div>
+        <div class="size-label">Web · 240–400px</div>
+      </div>
+      <div class="size-cell">
+        <div class="wordmark" style="font-size: 22px;"><span>OLA</span><span class="dot"></span><span class="emp-part">empresario</span></div>
+        <div class="size-label">Compacto · 140–240px</div>
+      </div>
+      <div class="size-cell">
+        <div class="wordmark" style="font-size: 28px;"><span>OLA</span><span class="dot"></span></div>
+        <div class="size-label">Favicon · ≤ 64px</div>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/favicon.svg" download>SVG</a>
+          <a class="dl-btn" href="assets/favicon.png" download>PNG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 04 COLOR =============== -->
+<section id="color">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>04<em>.</em></big>Paleta</div>
+      <div>
+        <h2 class="sect-title">Negro.<br/>Blanco.<br/>Rojo Faro<span class="dot"></span></h2>
+        <p class="sect-desc">Tres colores. Si se suma, se diluye. La paleta es mínima por decisión, no por accidente. 80% negro · 15% blanco · 5% rojo. El rojo nunca es protagonista, siempre es señal.</p>
+      </div>
+    </div>
+
+    <div class="color-hero">
+      <div class="color-block k">
+        <div>
+          <div class="label">80% · Peso visual</div>
+          <h4>Negro</h4>
+        </div>
+        <div class="ratio">AAA · 21:1</div>
+        <div class="tokens">
+          <span><b>HEX</b><span>#000000</span></span>
+          <span><b>RGB</b><span>0 · 0 · 0</span></span>
+          <span><b>CMYK</b><span>0 · 0 · 0 · 100</span></span>
+          <span><b>Pantone</b><span>Process Black</span></span>
+          <span><b>Uso</b><span>Fondos, tipografía</span></span>
+        </div>
+      </div>
+      <div class="color-block w">
+        <div>
+          <div class="label">15% · Respiro</div>
+          <h4>Blanco</h4>
+        </div>
+        <div class="ratio" style="color: #666;">AAA</div>
+        <div class="tokens">
+          <span><b>HEX</b><span>#FFFFFF</span></span>
+          <span><b>RGB</b><span>255 · 255 · 255</span></span>
+          <span><b>Uso</b><span>Espacio, fondo alterno</span></span>
+        </div>
+      </div>
+      <div class="color-block r">
+        <div>
+          <div class="label">5% · Señal</div>
+          <h4>Rojo<br/>Faro</h4>
+        </div>
+        <div class="ratio">4.9:1 · AA</div>
+        <div class="tokens">
+          <span><b>HEX</b><span>#FF2D2D</span></span>
+          <span><b>RGB</b><span>255 · 45 · 45</span></span>
+          <span><b>Pantone</b><span>179 C</span></span>
+          <span><b>Uso</b><span>Acento único</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- jerarquía visual -->
+    <div style="margin-top: 40px; display: grid; grid-template-columns: 4fr 1fr; gap: 0; border: 1px solid var(--line);">
+      <div style="display: grid; grid-template-columns: 80fr 15fr 5fr; height: 48px;">
+        <div style="background: var(--black); border-right: 1px solid var(--line);"></div>
+        <div style="background: var(--white);"></div>
+        <div style="background: var(--red);"></div>
+      </div>
+      <div style="padding: 14px 20px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; border-left: 1px solid var(--line);">80 · 15 · 5</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 05 TIPOGRAFÍA =============== -->
+<section id="tipografia">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>05<em>.</em></big>Tipografía</div>
+      <div>
+        <h2 class="sect-title">Sin serifas.<br/>Sin florituras<span class="dot"></span></h2>
+        <p class="sect-desc">Sans serif en peso máximo para titulares. Regular para cuerpo. Mono para meta. Nunca script, nunca decorativa, nunca imitando autógrafo. Inter es la familia oficial; Arial o Helvetica como sistema.</p>
+      </div>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-meta">
+        <b>Inter Black</b>
+        Display · Titulares<br/>
+        800 · 900<br/><br/>
+        Google Fonts · Gratis<br/><br/>
+        Uso: 48–200px<br/>
+        letter-spacing: -0.04em<br/>
+        text-transform: uppercase
+      </div>
+      <div>
+        <p class="type-sample-display">OLA<span class="dot"></span></p>
+      </div>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-meta">
+        <b>Inter Light / Regular</b>
+        Cuerpo · Párrafos<br/>
+        300 · 400 · 500<br/><br/>
+        Google Fonts · Gratis<br/><br/>
+        Altura de línea: 1.5–1.6<br/>
+        Nunca justificado
+      </div>
+      <div>
+        <p class="type-sample-body">
+          No nades más fuerte. Mira mejor. Tu caos es un impuesto silencioso. La disciplina es tu nuevo marketing. <b>El negocio perfecto que no arranca vale cero.</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-meta">
+        <b>JetBrains Mono</b>
+        Meta · Labels · Código<br/>
+        400 · 500<br/><br/>
+        Google Fonts · Gratis<br/><br/>
+        Uso: 10–14px<br/>
+        letter-spacing: 0.14em<br/>
+        text-transform: uppercase
+      </div>
+      <div>
+        <p class="type-sample-mono"><span>// FASE F1 ·</span> DIAGNÓSTICO BRUTAL · OLA EMPRESARIO · V 1.0</p>
+      </div>
+    </div>
+
+    <div class="type-scale">
+      <div class="trow thead">
+        <div>Token</div><div>Size / Line</div><div>Muestra</div>
+      </div>
+      <div class="trow">
+        <div>display-xl</div><div>200 / 0.85</div>
+        <div class="tsample" style="font-size: 56px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em;">MONTA LA OLA</div>
+      </div>
+      <div class="trow">
+        <div>h1</div><div>88 / 0.9</div>
+        <div class="tsample" style="font-size: 40px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.04em;">Sistema Faro</div>
+      </div>
+      <div class="trow">
+        <div>h2</div><div>44 / 1.0</div>
+        <div class="tsample" style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em;">Diagnóstico brutal</div>
+      </div>
+      <div class="trow">
+        <div>h3</div><div>22 / 1.2</div>
+        <div class="tsample" style="font-size: 20px; font-weight: 700;">El Navegante</div>
+      </div>
+      <div class="trow">
+        <div>body</div><div>17 / 1.5</div>
+        <div class="tsample" style="font-size: 16px; font-weight: 300;">Texto corrido para mensajes del Faro.</div>
+      </div>
+      <div class="trow">
+        <div>meta</div><div>11 / 1.5</div>
+        <div class="tsample" style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);">FASE · F1 · DIAGNÓSTICO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 06 VOZ =============== -->
+<section id="voz">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>06<em>.</em></big>Voz</div>
+      <div>
+        <h2 class="sect-title">Sí dice.<br/>No dice<span class="dot"></span></h2>
+        <p class="sect-desc">La voz es cálida pero exigente. Trata al navegante como profesional. La empatía se demuestra con precisión, no con lágrimas. Si el Faro acierta el diagnóstico, eso ya es empatía probada.</p>
+      </div>
+    </div>
+
+    <div class="voice-tabla">
+      <div class="h si">Sí dice<span class="dot" style="display:inline-block;width:6px;height:6px;background:var(--red);border-radius:50%;margin-left:8px;"></span></div>
+      <div class="h no">No dice</div>
+
+      <div class="row si">OLA empresario, respira.</div>
+      <div class="row no">Hola amigos, ¿cómo están?</div>
+
+      <div class="row si">Tu caos es un impuesto silencioso.</div>
+      <div class="row no">Sabemos que emprender es difícil...</div>
+
+      <div class="row si">No nades más fuerte. Mira mejor.</div>
+      <div class="row no">¡Dale con todo, tú puedes!</div>
+
+      <div class="row si">La disciplina es tu nuevo marketing.</div>
+      <div class="row no">El secreto del éxito es...</div>
+
+      <div class="row si">El negocio perfecto que no arranca vale cero.</div>
+      <div class="row no">Planifica cada detalle antes de lanzar.</div>
+
+      <div class="row si">Pueden copiar tu post; no pueden clonar tu entrega.</div>
+      <div class="row no">Sé auténtico y comparte tu mensaje.</div>
+    </div>
+
+    <!-- vocabulario -->
+    <h3 style="margin: 72px 0 12px; font-weight: 900; font-size: 36px; letter-spacing: -0.03em; text-transform: uppercase;">Vocabulario Signature</h3>
+    <p style="color: var(--muted); margin: 0 0 8px; max-width: 62ch;">Términos que solo existen en el universo OLAempresario. Son el ADN. No se traducen, no se sustituyen.</p>
+
+    <div class="vocab">
+      <div class="row"><div class="term"><span class="dot"></span>OLA empresario</div><div class="def">Saludo insignia. Toda comunicación inicia así. "OLA empresario, respira."</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>Navegante</div><div class="def">Cliente oficial del Sistema Faro. Ha cruzado la llamada diagnóstico.</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>Capitán</div><div class="def">El dueño del negocio como figura de decisión final. No hay copiloto moral.</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>El Faro</div><div class="def">Mentor · Voz de marca · Sistema. No es una persona; es un punto fijo.</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>Diagnóstico brutal</div><div class="def">Primera fase del sistema. No consuela, aclara. Duele, pero ubica.</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>Puerto seguro</div><div class="def">Estado de negocio que opera sin depender 100% del dueño.</div></div>
+      <div class="row"><div class="term"><span class="dot"></span>Caos disfrazado</div><div class="def">Lo que el emprendedor llama "estoy ocupado". Fuegos que no terminan.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 07 METÁFORA =============== -->
+<section id="metafora">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>07<em>.</em></big>La Metáfora</div>
+      <div>
+        <h2 class="sect-title">La historia<br/>de Santi<span class="dot"></span></h2>
+        <p class="sect-desc">La metáfora central de OLAempresario no es el mar genérico. Es específica, está escrita, y tiene protagonista: Santi, el personaje del libro <em>¿Cuál es tu negocio?</em> Su arco es el que vive todo OLA empresario.</p>
+      </div>
+    </div>
+
+    <!-- Historia de Santi en 5 actos -->
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-bottom: 80px; border-top: 1px solid var(--line); border-left: 1px solid var(--line);">
+      <div style="padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 14px;">ACTO 01</div>
+        <h4 style="font-size: 24px; letter-spacing: -0.03em; margin: 0 0 14px;">El Pescador<span class="dot"></span></h4>
+        <p style="font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0;">Santi sale al mar antes del amanecer. Rema, lanza redes, vuelve cansado. Cree que si uno le da más al mar, el mar devuelve más. Su fe es puro músculo.</p>
+      </div>
+      <div style="padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 14px;">ACTO 02</div>
+        <h4 style="font-size: 24px; letter-spacing: -0.03em; margin: 0 0 14px;">La Caída<span class="dot"></span></h4>
+        <p style="font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0;">Una ola lo arranca del bote. Nada con fuerza, con rabia, con miedo. Horas después entiende lo que el ego negaba: ha estado nadando en círculos.</p>
+      </div>
+      <div style="padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #0a0a0a; color: #fff;">
+        <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 14px;">ACTO 03</div>
+        <h4 style="font-size: 24px; letter-spacing: -0.03em; margin: 0 0 14px; color: #fff;">El Rescate<span class="dot"></span></h4>
+        <p style="font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.7); margin: 0;">Entre la niebla aparece un helicóptero. Lo pilota el Faro. Santi llega a tierra destrozado. El Faro lo observa sin urgencia y le dice una sola frase.</p>
+      </div>
+      <div style="padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 14px;">ACTO 04</div>
+        <h4 style="font-size: 24px; letter-spacing: -0.03em; margin: 0 0 14px;">El Despertar<span class="dot"></span></h4>
+        <p style="font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0;">Santi se recupera en tierra. Ya no quiere pescar: quiere entender las olas. Descubre que el mar no se domina — se interpreta. Deja de ser pescador. Es navegante.</p>
+      </div>
+      <div style="padding: 32px 28px; border-bottom: 1px solid var(--line);">
+        <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 14px;">ACTO 05</div>
+        <h4 style="font-size: 24px; letter-spacing: -0.03em; margin: 0 0 14px;">El Surfista<span class="dot"></span></h4>
+        <p style="font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0;">Aprende a montar una ola. La primera vez que se levanta sobre la tabla, entiende el <b style="color: var(--ink);">timing</b>. Una ola mal tomada es caída. Una leída con timing es vuelo.</p>
+      </div>
+    </div>
+
+    <!-- Cierre del arco narrativo -->
+    <div style="margin-bottom: 80px; padding: 48px; background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center;">
+      <div>
+        <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px;">El reencuentro</div>
+        <p style="font-family: var(--f-serif, Georgia, serif); font-size: clamp(24px, 2.4vw, 34px); font-style: italic; line-height: 1.25; margin: 0; letter-spacing: -0.01em;">"Cuando aprendí a pescar, buscaba peces. Cuando aprendí a surfear, encontré propósito."</p>
+        <p style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 24px 0 0;">— Santi, ya surfista</p>
+      </div>
+      <div style="border-left: 2px solid var(--red); padding-left: 32px;">
+        <p style="font-size: 17px; line-height: 1.55; margin: 0 0 18px;">Meses después, el Faro lo visita y lo encuentra de pie sobre su tabla.</p>
+        <p style="font-size: 19px; line-height: 1.45; margin: 0; font-weight: 500;">— <em>Veo que ya no nadas</em>, le dice.<br/>— <em>No. Ahora escucho.</em></p>
+        <p style="font-size: 14px; color: var(--muted); margin: 24px 0 0; max-width: 48ch;">Esa es la transformación que promete OLAempresario. El pescador sin rumbo es el dueño sin claridad. El surfista con timing es el empresario maestro. El Faro es la voz que hace posible el tránsito.</p>
+      </div>
+    </div>
+
+    <!-- El concepto central: Timing -->
+    <div style="margin-bottom: 80px; padding: 64px 48px; background: #0a0a0a; color: #fff; text-align: center;">
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 20px;">El concepto central</div>
+      <h3 style="font-size: clamp(48px, 11vw, 180px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; margin: 0 0 28px; color: #fff; overflow-wrap: break-word;">TIMING<span style="color: var(--red);">.</span></h3>
+      <p style="font-family: var(--f-serif, Georgia, serif); font-style: italic; font-size: 26px; line-height: 1.3; max-width: 32ch; margin: 0 auto 40px; color: rgba(255,255,255,0.85);">Saber cuándo entrar. Ni una brazada antes, ni una después.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; text-align: left;">
+        <div>
+          <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 8px;">MERCADO</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin: 0;">Cuándo lanzar, cuándo subir precios, cuándo cerrar una línea.</p>
+        </div>
+        <div>
+          <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 8px;">CAJA</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin: 0;">Cuándo cobrar, cuándo reservar, cuándo reinvertir.</p>
+        </div>
+        <div>
+          <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 8px;">OFERTA</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin: 0;">Cuándo subir el ticket, cuándo callar, cuándo ofrecer el upsell.</p>
+        </div>
+        <div>
+          <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--red); margin-bottom: 8px;">EQUIPO</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin: 0;">Cuándo contratar, cuándo corregir, cuándo dejar ir.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rosetta: tabla de traducción completa -->
+    <div style="margin-bottom: 32px;">
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 12px;">La Rosetta · Mar → Negocio</div>
+      <h3 style="font-size: 40px; letter-spacing: -0.03em; margin: 0 0 32px; font-weight: 900;">Cada metáfora tiene equivalente operativo<span class="dot"></span></h3>
+    </div>
+
+    <div class="metaphor-table">
+      <div class="head">Metáfora</div>
+      <div class="head">Qué es en el negocio</div>
+      <div class="head">Cómo se usa en copy</div>
+
+      <div class="term"><span class="dot"></span>Mar</div>
+      <div class="meaning">El mercado. Vasto, indiferente a tu esfuerzo.</div>
+      <div class="example">"El mar no premia al que se mueve. Premia al que se orienta."</div>
+
+      <div class="term"><span class="dot"></span>Ola</div>
+      <div class="meaning">Decisión, cliente, oportunidad o coyuntura. Se surfea, no se pelea.</div>
+      <div class="example">"No todas las olas son tuyas. Aprende cuál sí."</div>
+
+      <div class="term"><span class="dot"></span>Timing</div>
+      <div class="meaning">Saber cuándo entrar. Diferencia entre fuerza y dirección.</div>
+      <div class="example">"Te falta timing, no marketing."</div>
+
+      <div class="term"><span class="dot"></span>Tormenta</div>
+      <div class="meaning">Crisis puntual: caída de ingresos, cliente perdido, ruptura interna.</div>
+      <div class="example">"De la tormenta no se sale nadando. Se sale leyendo."</div>
+
+      <div class="term"><span class="dot"></span>Orilla</div>
+      <div class="meaning">Etapa pre-emprendedor. No ha soltado amarras.</div>
+      <div class="example">"Dejar la orilla es la decisión más cara que postergan."</div>
+
+      <div class="term"><span class="dot"></span>Pescador</div>
+      <div class="meaning">Emprendedor que rema con fuerza pero en círculos.</div>
+      <div class="example">"Llevas meses remando. ¿Seguro que estás avanzando?"</div>
+
+      <div class="term"><span class="dot"></span>Navegante</div>
+      <div class="meaning">Cliente rescatado. Ya se orienta. Miembro de Primera OLA.</div>
+      <div class="example">"OLA empresario, bienvenido a bordo, Navegante."</div>
+
+      <div class="term"><span class="dot"></span>Surfista</div>
+      <div class="meaning">Empresario maestro. Lee, espera, entra en timing.</div>
+      <div class="example">"El surfista no controla el mar. Lo lee."</div>
+
+      <div class="term"><span class="dot"></span>Puerto seguro</div>
+      <div class="meaning">Negocio que opera sin dependencia total del dueño.</div>
+      <div class="example">"El puerto no es llegar: es dejar de naufragar cada lunes."</div>
+
+      <div class="term"><span class="dot"></span>Faro</div>
+      <div class="meaning">Mentor + sistema + voz. Rescatista, luego guía.</div>
+      <div class="example">"El Faro no te rescata dos veces. Te enseña a leer."</div>
+
+      <div class="term"><span class="dot"></span>Remar</div>
+      <div class="meaning">Esfuerzo operativo bruto, sin dirección.</div>
+      <div class="example">"Remar más fuerte no es remar mejor."</div>
+
+      <div class="term"><span class="dot"></span>Fluir</div>
+      <div class="meaning">Operar con sistema, con timing, con dirección.</div>
+      <div class="example">"Cuando fluyes, el mar deja de ser enemigo."</div>
+    </div>
+
+    <blockquote class="faro-quote">
+      "Cada vez que un emprendedor levanta la cabeza, deja de ser pescador y empieza a ser surfista<span class="dot"></span>"
+      <footer>— El Faro</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- =============== 08 AVATARES =============== -->
+<section id="avatares">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>08<em>.</em></big>Avatares</div>
+      <div>
+        <h2 class="sect-title">A quién<br/>le hablamos<span class="dot"></span></h2>
+        <p class="sect-desc">Dos avatares principales. No son competencia entre sí: son etapas distintas del mismo viaje. El Faro los ve a ambos, pero les habla diferente.</p>
+      </div>
+    </div>
+
+    <div class="avatar-grid">
+      <div class="avatar-card">
+        <div class="tag">AVATAR 01 · LA ORILLA</div>
+        <h3>El que está<br/>en la orilla<span class="dot" style="display:inline-block;width:0.14em;height:0.14em;background:var(--red);border-radius:50%;transform:translateY(-0.05em);margin-left:0.04em;"></span></h3>
+        <div class="sub">Pre-emprendedor · 25–45 · LATAM, EE.UU. hispano, España</div>
+
+        <h6>Psicografía</h6>
+        <p>Paralizado por miedo a perder dinero, a fallar en público, a que "sea tarde". Confunde investigación con acción. Tiene imaginación abundante y sistema cero.</p>
+
+        <h6>Se dice a sí mismo</h6>
+        <p class="says">"No estoy listo." · "No tengo el capital." · "No sé por dónde empezar." · "Si fracaso, ¿qué van a decir?"</p>
+
+        <div class="needs">
+          <b>Lo que realmente necesita</b>
+          No otro curso. Permiso estructurado para dar el primer paso. Un mapa que demuestre que empezar no es saltar al vacío: es cruzar un puente con barandas.
+        </div>
+      </div>
+
+      <div class="avatar-card" style="border-color: var(--red);">
+        <div class="tag">AVATAR 02 · CENTRAL</div>
+        <h3>El navegante<br/>perdido<span class="dot" style="display:inline-block;width:0.14em;height:0.14em;background:var(--red);border-radius:50%;transform:translateY(-0.05em);margin-left:0.04em;"></span></h3>
+        <div class="sub">Emprendedor 2–7 años · $2K–$30K/mes · equipo 0–8</div>
+
+        <h6>Psicografía</h6>
+        <p>Trabaja 10–14 horas al día apagando fuegos. Llama a eso "estar ocupado". Sabe que factura; no sabe si gana. Si se enferma una semana, el negocio se tambalea.</p>
+
+        <h6>Se dice a sí mismo</h6>
+        <p class="says">"Ya vendemos, lo que falta es escalar." · "Cuando pase este mes me organizo." · "El problema es que mi equipo no rinde." · "Me faltan clientes."</p>
+
+        <div class="needs">
+          <b>Lo que realmente pasa</b>
+          No le falta marketing. Le falta sistema. No le faltan clientes, le falta flujo. Está remando sin brújula y le llama a eso esfuerzo.
+        </div>
+      </div>
+    </div>
+
+    <!-- anti-avatar -->
+    <h3 style="margin: 72px 0 12px; font-weight: 900; font-size: 36px; letter-spacing: -0.03em; text-transform: uppercase;">A quién NO le hablamos</h3>
+    <p style="color: var(--muted); margin: 0 0 32px; max-width: 62ch;">Tan importante como saber a quién atendemos, es saber a quién no. Estos perfiles no encajan con el Sistema Faro.</p>
+
+    <div class="anti">
+      <div class="anti-cell">
+        <div class="x">✕</div>
+        <h6>Buscador de atajos</h6>
+        <p>Quiere fórmula mágica en 30 días. El Faro exige disciplina, no suerte.</p>
+      </div>
+      <div class="anti-cell">
+        <div class="x">✕</div>
+        <h6>Coleccionista de cursos</h6>
+        <p>Compra todo, aplica nada. Sin acción, no hay resultados.</p>
+      </div>
+      <div class="anti-cell">
+        <div class="x">✕</div>
+        <h6>El que culpa afuera</h6>
+        <p>Mercado, economía, equipo, gobierno. No hay capitán que admita timón.</p>
+      </div>
+      <div class="anti-cell">
+        <div class="x">✕</div>
+        <h6>Corporate 500+</h6>
+        <p>Nuestro rango es $0–$1M. Más arriba hay consultorías mejores.</p>
+      </div>
+      <div class="anti-cell">
+        <div class="x">✕</div>
+        <h6>Viene por motivación</h6>
+        <p>Aquí hay herramientas, no aplausos. El Faro ilumina; no consuela.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 09 STACK =============== -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>09<em>.</em></big>Stack</div>
+      <div>
+        <h2 class="sect-title">La ruta del<br/>navegante<span class="dot"></span></h2>
+        <p class="sect-desc">Todo producto cumple una función estratégica en el viaje. No hay productos sueltos: hay una ruta. Cada pieza acerca al navegante a la llamada diagnóstico y, desde ahí, a Primera OLA.</p>
+      </div>
+    </div>
+
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="fn-step">01</div>
+        <div><h5>Guía desde Cero</h5><div class="fn-note">Tripwire · Pre-emprendedor</div></div>
+        <div class="fn-note">/guiadecero</div>
+        <div class="fn-price">$27</div>
+      </div>
+      <div class="funnel-row">
+        <div class="fn-step">02</div>
+        <div><h5>La Brújula</h5><div class="fn-note">Manual F·A·R·O · GBB</div></div>
+        <div class="fn-note">/guiafaro</div>
+        <div class="fn-price">$15 / $37 / $97</div>
+      </div>
+      <div class="funnel-row">
+        <div class="fn-step">03</div>
+        <div><h5>Masterclass OLA</h5><div class="fn-note">60 min · Estrategia pura</div></div>
+        <div class="fn-note">/tallervirtual</div>
+        <div class="fn-price">$79</div>
+      </div>
+      <div class="funnel-arrow">▼ &nbsp; PUENTE ESTRATÉGICO &nbsp; ▼</div>
+      <div class="funnel-row" style="border-color: var(--red); border-width: 1px; border-style: dashed;">
+        <div class="fn-step">04</div>
+        <div><h5>Llamada Diagnóstico</h5><div class="fn-note">Con Fernando · Aplicación mediante</div></div>
+        <div class="fn-note">Criterio · No es venta</div>
+        <div class="fn-price">Sin costo</div>
+      </div>
+      <div class="funnel-arrow">▼ &nbsp; NAVEGANTE OFICIAL &nbsp; ▼</div>
+      <div class="funnel-row highlight">
+        <div class="fn-step">05</div>
+        <div><h5>Primera OLA</h5><div class="fn-note">Paquete Inicial FARO · F1 + F2 · 3 meses</div></div>
+        <div class="fn-note">/planes</div>
+        <div class="fn-price">$2,940</div>
+      </div>
+    </div>
+
+    <!-- featured product: primera ola -->
+    <div class="product-card featured">
+      <div class="product-main">
+        <div class="tag"><b>Producto ancla</b> · Primera OLA</div>
+        <h3>Primera OLA<span class="dot" style="display:inline-block;width:0.14em;height:0.14em;background:var(--red);border-radius:50%;transform:translateY(-0.05em);margin-left:0.04em;"></span></h3>
+        <p class="subt">Paquete Inicial FARO · F1 (Descubrimiento) + F2 (Fundamentos). Donde el emprendedor se convierte oficialmente en Navegante.</p>
+        <ul>
+          <li>Diagnóstico 1:1 inicial con Fernando</li>
+          <li>Boardroom Estratégico trimestral · sesión de dirección en alto nivel</li>
+          <li>Sesiones grupales semanales con la tribu de Navegantes</li>
+          <li>Sesión 1:1 cada 15 días con Fernando</li>
+          <li>El Faro IA ILIMITADO 24/7 por WhatsApp</li>
+          <li>+14 herramientas Tessa con IA · 1.000 créditos mensuales</li>
+        </ul>
+      </div>
+      <div class="product-side">
+        <div class="pitem">Duración</div>
+        <div class="pval">3 meses</div>
+        <div class="pitem">Inversión</div>
+        <div class="pval">$2,940 USD<br/><span style="font-size: 14px; opacity: 0.8; font-weight: 400;">o 2 × $1,600</span></div>
+        <div class="pitem">Fase</div>
+        <div class="pval" style="font-size: 22px;">F1 · F2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 10 FRAMEWORKS =============== -->
+<section id="frameworks">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>10<em>.</em></big>Frameworks</div>
+      <div>
+        <h2 class="sect-title">El Sistema<br/>F1 → F5<span class="dot"></span></h2>
+        <p class="sect-desc">El Sistema Faro son cinco fases. Ninguna se salta. Cada una desbloquea herramientas, acompañamiento y nivel de decisión. No es un curso: es una ruta.</p>
+      </div>
+    </div>
+
+    <div class="faro-phases">
+      <div class="phase">
+        <div class="fnum">FASE · 01</div>
+        <div class="fcode">F<em>1</em></div>
+        <h5>Descubrimiento</h5>
+        <p>Claridad brutal de situación actual. Cero filtros, cero consuelo.</p>
+        <div class="out">RESULTADO<b>Diagnóstico completo + zona de dolor real.</b></div>
+      </div>
+      <div class="phase">
+        <div class="fnum">FASE · 02</div>
+        <div class="fcode">F<em>2</em></div>
+        <h5>Fundamentos</h5>
+        <p>Construir base sólida y repetible. Lo invisible que sostiene todo.</p>
+        <div class="out">RESULTADO<b>Procesos documentados · números en control.</b></div>
+      </div>
+      <div class="phase">
+        <div class="fnum">FASE · 03</div>
+        <div class="fcode">F<em>3</em></div>
+        <h5>Estructura</h5>
+        <p>Sistemas reales que reducen la dependencia del dueño.</p>
+        <div class="out">RESULTADO<b>Roles, rituales y automatizaciones.</b></div>
+      </div>
+      <div class="phase">
+        <div class="fnum">FASE · 04</div>
+        <div class="fcode">F<em>4</em></div>
+        <h5>Optimización</h5>
+        <p>Más con menos. Limpiar grasa y reforzar palancas.</p>
+        <div class="out">RESULTADO<b>Margen saneado · decisiones con dato.</b></div>
+      </div>
+      <div class="phase">
+        <div class="fnum">FASE · 05</div>
+        <div class="fcode">F<em>5</em></div>
+        <h5>Escalabilidad</h5>
+        <p>Libertad real del dueño. Negocio que crece sin él.</p>
+        <div class="out">RESULTADO<b>Operación autónoma · expansión controlada.</b></div>
+      </div>
+    </div>
+
+    <!-- small frameworks -->
+    <div class="fw-grid">
+      <div class="fw">
+        <h4>GPS<span class="dot"></span></h4>
+        <div class="sub">Gente · Propuesta · Sistema</div>
+        <dl>
+          <dt>G</dt><dd>Gente<small>Cliente ideal, equipo, aliados. Quién rema contigo.</small></dd>
+          <dt>P</dt><dd>Propuesta<small>Oferta, precios, paquetes. Qué entregas.</small></dd>
+          <dt>S</dt><dd>Sistema<small>Procesos, métricas, herramientas. Cómo lo operas sin ti.</small></dd>
+        </dl>
+      </div>
+      <div class="fw">
+        <h4>30 · 40 · 30<span class="dot"></span></h4>
+        <div class="sub">Distribución de ingresos</div>
+        <dl>
+          <dt>30%</dt><dd>Costos directos<small>Variables. Lo que cuesta entregar.</small></dd>
+          <dt>40%</dt><dd>Operación<small>Equipo, herramientas, marketing, reinversión.</small></dd>
+          <dt>30%</dt><dd>Utilidad<small>Pago al dueño + impuestos. Intocable.</small></dd>
+        </dl>
+      </div>
+      <div class="fw">
+        <h4>GBB<span class="dot"></span></h4>
+        <div class="sub">Good · Better · Best</div>
+        <dl>
+          <dt>G</dt><dd>Good<small>Puerta de entrada. Filtra curiosos.</small></dd>
+          <dt>B</dt><dd>Better<small>Sweet spot. Donde se concentra la decisión.</small></dd>
+          <dt>B</dt><dd>Best<small>El ancla. Hace que Better parezca obvio.</small></dd>
+        </dl>
+      </div>
+      <div class="fw">
+        <h4>HEARD<span class="dot"></span></h4>
+        <div class="sub">Protocolo ante crisis de cliente</div>
+        <dl>
+          <dt>H</dt><dd>Hear<small>Escuchar sin interrumpir.</small></dd>
+          <dt>E</dt><dd>Empathize<small>Validar emoción antes del hecho.</small></dd>
+          <dt>A</dt><dd>Apologize<small>Disculpa por la experiencia.</small></dd>
+          <dt>R</dt><dd>Resolve<small>Acción concreta + tiempo.</small></dd>
+          <dt>D</dt><dd>Diagnose<small>Causa raíz interna.</small></dd>
+        </dl>
+      </div>
+      <div class="fw">
+        <h4>NAVE<span class="dot"></span></h4>
+        <div class="sub">Portafolio de productos</div>
+        <dl>
+          <dt>N</dt><dd>Núcleo<small>Producto ancla del ecosistema.</small></dd>
+          <dt>A</dt><dd>Ascensos<small>Upgrades y expansiones.</small></dd>
+          <dt>V</dt><dd>Vinculación<small>Recurrencia y comunidad.</small></dd>
+          <dt>E</dt><dd>Escala<small>Apalancamiento y alcance.</small></dd>
+        </dl>
+      </div>
+      <div class="fw">
+        <h4>ERAC<span class="dot"></span></h4>
+        <div class="sub">Matriz FARO · Océano Azul PyME</div>
+        <dl>
+          <dt>E</dt><dd>Eliminar<small>Lo que el sector da por sentado.</small></dd>
+          <dt>R</dt><dd>Reducir<small>Lo sobredimensionado.</small></dd>
+          <dt>A</dt><dd>Aumentar<small>Lo infravalorado.</small></dd>
+          <dt>C</dt><dd>Crear<small>Lo que nadie ofrece todavía.</small></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 11 APLICACIONES =============== -->
+<section id="aplicaciones">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>11<em>.</em></big>Aplicaciones</div>
+      <div>
+        <h2 class="sect-title">La marca<br/>en el mundo<span class="dot"></span></h2>
+        <p class="sect-desc">Ejemplos vivos del sistema aplicado: post de redes, newsletter, tarjetas, podcast. No son reglas rígidas, son el ADN en acción.</p>
+      </div>
+    </div>
+
+    <div class="apps">
+      <!-- biz card tall -->
+      <div class="app tall">
+        <div class="app-label">01 · Tarjetas</div>
+        <div class="bizstage">
+          <div class="bcard front">
+            <div>
+              <div class="role">Founder · Mentor</div>
+              <div class="name">Fernando<br/>Capitán del Faro</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div class="info">
+                fernando@olaempresario.com<br/>
+                olaempresario.com
+              </div>
+              <div class="wordmark"><span>OLA</span><span class="dot" style="width:0.15em;height:0.15em;background:var(--red);border-radius:50%;display:inline-block;margin:0 0.04em;"></span></div>
+            </div>
+          </div>
+          <div class="bcard back">
+            <div style="text-align: center;">
+              <div style="font-weight: 900; font-size: 28px; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase;">Monta<br/>la ola</div>
+              <div style="width: 10px; height: 10px; background: var(--red); border-radius: 50%; margin: 12px auto 0;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IG post -->
+      <div class="app">
+        <div class="app-label">02 · Instagram · Post</div>
+        <div class="ig-post">
+          <div class="head">
+            <span>EPISODIO 042</span>
+            <span>OLA</span>
+          </div>
+          <h3>Tu caos es<br/>un impuesto<br/>silencioso<span class="dot"></span></h3>
+          <div class="foot">
+            <div class="wordmark"><span>OLA</span><span class="dot" style="width:0.15em;height:0.15em;background:var(--red);border-radius:50%;display:inline-block;margin:0 0.04em;"></span><span class="emp-part">empresario</span></div>
+            <span>— El Faro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- podcast -->
+      <div class="app">
+        <div class="app-label">03 · Podcast · Cover</div>
+        <div class="pod">
+          <div class="tag">PODCAST · S02 · E09</div>
+          <div>
+            <div class="ep">EPISODIO 042 ·</div>
+            <h3>El error<br/>más caro<br/>del founder<span class="dot" style="display:inline-block;width:0.14em;height:0.14em;background:var(--red);border-radius:50%;transform:translateY(-0.05em);margin-left:0.04em;"></span></h3>
+          </div>
+          <div class="wordmark" style="font-size: 16px;"><span>OLA</span><span class="dot" style="width:0.15em;height:0.15em;background:var(--red);border-radius:50%;display:inline-block;margin:0 0.04em;"></span><span class="emp-part" style="color:var(--muted);">empresario</span></div>
+        </div>
+      </div>
+
+      <!-- newsletter -->
+      <div class="app" style="background: var(--white);">
+        <div class="app-label" style="color: #666;">04 · Newsletter</div>
+        <div class="news">
+          <div class="k"><span>LUN · 20 · ABR</span><span>— EL FARO</span></div>
+          <h2>La semana<br/>en tres olas<span class="dot"></span></h2>
+          <hr/>
+          <ol>
+            <li>Diagnóstico brutal: 3 errores que casi matan mi PyME.</li>
+            <li>Playbook: primeros 10 clientes B2B sin quemar capital.</li>
+            <li>Cómo el Modelo 30·40·30 saneó un negocio en 90 días.</li>
+          </ol>
+          <footer><span>OLAEMPRESARIO.COM</span><span>V 042</span></footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIBRO =============== -->
+<section id="libro">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>12<em>.</em></big>El Libro</div>
+      <div>
+        <h2 class="sect-title">¿Cuál es tu<br/>negocio?<span class="dot"></span></h2>
+        <p class="sect-desc">La pieza ancla del universo OLA. El libro de Fernando Pérez que abre la conversación con todo navegante antes de entrar al sistema. Diagnóstico brutal, con mapa.</p>
+      </div>
+    </div>
+
+    <div class="book-wrap">
+      <div class="book-stage">
+        <div class="book-cover">
+          <img src="assets/libro-cual-es-tu-negocio.png" alt="Portada del libro ¿Cuál es tu negocio? — Fernando Pérez"/>
+        </div>
+      </div>
+      <div class="book-info">
+        <div class="eyebrow">Pieza insignia · 2026</div>
+        <h3>El sistema Faro para dejar de remar en círculos<span class="dot"></span></h3>
+        <div class="author">Fernando Pérez · OLAempresario</div>
+        <p>Un libro que no motiva: diagnostica. Presenta la metodología F·A·R·O al emprendedor que ya está en el mar y no sabe hacia dónde rema. Cierre natural: la llamada diagnóstico.</p>
+        <p style="color: var(--white); font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.08em; border-left: 2px solid var(--red); padding-left: 16px; text-transform: uppercase;">"No vendemos humo. Vendemos disciplina con mapa."</p>
+        <dl class="book-specs">
+          <div><dt>Autor</dt><dd>Fernando Pérez</dd></div>
+          <div><dt>Sistema</dt><dd>F·A·R·O</dd></div>
+          <div><dt>Función</dt><dd>Lead magnet ancla</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PAPELERIA =============== -->
+<section id="papeleria">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>13<em>.</em></big>Papelería</div>
+      <div>
+        <h2 class="sect-title">La firma<br/>del Faro<span class="dot"></span></h2>
+        <p class="sect-desc">Línea gráfica de papelería: hoja membretada, carpeta, sobre, libreta y bolígrafo. Mismo ADN — negro, blanco y un punto rojo como firma visual. Sin adornos, sin gradientes, sin ruido.</p>
+      </div>
+    </div>
+
+    <div class="stationery">
+      <!-- Letterhead (tall, spans 2 rows) -->
+      <div class="stn letterhead">
+        <span class="stn-label"><b>01</b>Hoja membretada · A4</span>
+        <div class="letter-sheet">
+          <div class="letter-head">
+            <div>
+              <div class="letter-logo">OLA<span class="dot"></span><span class="emp">empresario</span></div>
+            </div>
+            <div class="letter-meta">
+              Olaempresario S.A.<br/>
+              olaempresario.com<br/>
+              hola@olaempresario.com
+            </div>
+          </div>
+          <div class="letter-body">
+            <div class="to">Para · [Destinatario]</div>
+            <div class="greet">OLA empresario, respira<span class="dot"></span></div>
+            <p>Este documento deja por escrito lo que ya conversamos en el diagnóstico: dónde está el negocio hoy, qué ola viene, y qué sigue. No es un contrato: es una brújula.</p>
+            <p>Si en 30 días no estás remando con más dirección, algo falló en el diagnóstico. Lo revisamos. No hay letras chicas.</p>
+          </div>
+          <div class="letter-sign">
+            Fernando Pérez · El Faro<br/>
+            · · · · ·
+          </div>
+        </div>
+      </div>
+
+      <!-- Folder -->
+      <div class="stn folder">
+        <span class="stn-label"><b>02</b>Carpeta · Presentación</span>
+        <div>
+          <h4>OLA<span class="dot"></span></h4>
+          <div class="sub">Sistema Faro · Navegante</div>
+        </div>
+        <div class="stamp"></div>
+      </div>
+
+      <!-- Envelope -->
+      <div class="stn envelope">
+        <span class="stn-label"><b>03</b>Sobre · DL</span>
+        <div class="stripe"></div>
+        <div class="mark">OLA<span class="dot"></span><span class="emp">empresario</span></div>
+        <div class="from">
+          Olaempresario S.A.<br/>
+          olaempresario.com<br/>
+          hola@olaempresario.com
+        </div>
+      </div>
+
+      <!-- Notebook -->
+      <div class="stn notebook">
+        <span class="stn-label"><b>04</b>Libreta · Bitácora</span>
+        <div class="nb-stage">
+          <div class="nb-book">
+            <div class="top">BITÁCORA DEL NAVEGANTE · Nº 042</div>
+            <div class="mono">ORDENA.<br/>DECIDE<span class="dot"></span></div>
+            <div class="num">— OLAEMPRESARIO —</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pen -->
+      <div class="stn pen-stage">
+        <span class="stn-label"><b>05</b>Bolígrafo · Edición Faro</span>
+        <div class="pen">
+          <span class="mk">OLA<span class="dot"></span></span>
+          <span class="trim">FARO · EDITION</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MERCH =============== -->
+<section id="merch">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>14<em>.</em></big>Merchandising</div>
+      <div>
+        <h2 class="sect-title">La marca<br/>se lleva puesta<span class="dot"></span></h2>
+        <p class="sect-desc">Uniformes y merch elegante — negro dominante, punto rojo como firma. Sin tipografía saturada ni ilustraciones. Calidad sobre cantidad: cada pieza es un recordatorio del sistema.</p>
+      </div>
+    </div>
+
+    <!-- SVG symbol: OLA wordmark (white) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="olaFull" viewBox="0 0 220 40">
+          <text x="0" y="32" font-family="Inter, sans-serif" font-weight="900" font-size="36" letter-spacing="-1.5" fill="#fff">OLA</text>
+          <circle cx="84" cy="30" r="3.5" fill="#FF2D2D"/>
+          <text x="92" y="30" font-family="Inter, sans-serif" font-weight="300" font-size="22" letter-spacing="-0.3" fill="#fff">empresario</text>
+        </symbol>
+        <symbol id="olaShort" viewBox="0 0 90 40">
+          <text x="0" y="32" font-family="Inter, sans-serif" font-weight="900" font-size="36" letter-spacing="-1.5" fill="#fff">OLA</text>
+          <circle cx="84" cy="30" r="4" fill="#FF2D2D"/>
+        </symbol>
+        <symbol id="olaShortBlack" viewBox="0 0 90 40">
+          <text x="0" y="32" font-family="Inter, sans-serif" font-weight="900" font-size="36" letter-spacing="-1.5" fill="#000">OLA</text>
+          <circle cx="84" cy="30" r="4" fill="#FF2D2D"/>
+        </symbol>
+        <!-- Red dot monogram only -->
+        <symbol id="olaDot" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="6" fill="#FF2D2D"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="merch-grid">
+
+      <!-- 01 · Polo uniforme (big) -->
+      <div class="merch big tall">
+        <span class="label"><b>01</b>Uniforme · Polo</span>
+        <span class="variant">Logo completo</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 340 400" width="280">
+            <!-- shadow -->
+            <ellipse cx="170" cy="390" rx="120" ry="6" fill="rgba(0,0,0,0.5)"/>
+            <!-- body -->
+            <path d="M 70 80 L 120 60 L 140 70 Q 170 85 200 70 L 220 60 L 270 80 L 290 130 L 260 145 L 260 380 Q 260 388 252 388 L 88 388 Q 80 388 80 380 L 80 145 L 50 130 Z"
+                  fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+            <!-- shoulder highlight -->
+            <path d="M 70 80 L 120 60 L 140 70 L 130 95 Z" fill="#151515"/>
+            <path d="M 270 80 L 220 60 L 200 70 L 210 95 Z" fill="#151515"/>
+            <!-- side shadow -->
+            <path d="M 80 145 L 80 380 Q 80 388 88 388 L 95 388 L 95 150 Z" fill="#050505"/>
+            <path d="M 260 145 L 260 380 Q 260 388 252 388 L 245 388 L 245 150 Z" fill="#050505"/>
+            <!-- collar -->
+            <path d="M 140 70 Q 170 90 200 70 L 195 85 Q 170 100 145 85 Z" fill="#1f1f1f" stroke="#0a0a0a"/>
+            <!-- placket -->
+            <line x1="170" y1="90" x2="170" y2="150" stroke="#050505" stroke-width="2"/>
+            <circle cx="170" cy="105" r="2" fill="#2a2a2a"/>
+            <circle cx="170" cy="125" r="2" fill="#2a2a2a"/>
+            <circle cx="170" cy="145" r="2" fill="#2a2a2a"/>
+            <!-- embroidery on chest (left pec) -->
+            <use href="#olaShort" x="205" y="135" width="55" height="24"/>
+            <!-- hem stitch -->
+            <line x1="85" y1="378" x2="255" y2="378" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Polo Uniforme<span class="dot"></span></h5>
+          <div class="cap">Piqué premium · Bordado tonal pecho · Equipo + eventos</div>
+        </div>
+      </div>
+
+      <!-- 02 · Camisa -->
+      <div class="merch">
+        <span class="label"><b>02</b>Camisa</span>
+        <span class="variant">Ícono rojo</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 280 300" width="220">
+            <ellipse cx="140" cy="292" rx="100" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <!-- tee body -->
+            <path d="M 50 60 L 100 40 Q 140 55 180 40 L 230 60 L 250 110 L 215 120 L 215 285 Q 215 290 210 290 L 70 290 Q 65 290 65 285 L 65 120 L 30 110 Z"
+                  fill="#0a0a0a" stroke="#1a1a1a"/>
+            <path d="M 65 120 L 65 285 Q 65 290 70 290 L 80 290 L 80 125 Z" fill="#050505"/>
+            <path d="M 215 120 L 215 285 Q 215 290 210 290 L 200 290 L 200 125 Z" fill="#050505"/>
+            <!-- neck -->
+            <path d="M 100 40 Q 140 65 180 40 L 175 55 Q 140 72 105 55 Z" fill="#1a1a1a"/>
+            <!-- red dot centered chest -->
+            <circle cx="140" cy="140" r="8" fill="#FF2D2D"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Camisa Navegante<span class="dot"></span></h5>
+          <div class="cap">Algodón pesado · Punto rojo centrado</div>
+        </div>
+      </div>
+
+      <!-- 03 · Gorra -->
+      <div class="merch">
+        <span class="label"><b>03</b>Gorra</span>
+        <span class="variant">Bordado tonal</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 300 220" width="230">
+            <ellipse cx="150" cy="210" rx="110" ry="5" fill="rgba(0,0,0,0.4)"/>
+            <!-- crown -->
+            <path d="M 60 140 Q 60 60 150 55 Q 240 60 240 140 L 240 150 L 60 150 Z" fill="#0a0a0a" stroke="#1a1a1a"/>
+            <!-- panel seams -->
+            <path d="M 150 55 L 150 150" stroke="#050505" stroke-width="1"/>
+            <path d="M 100 62 Q 110 105 120 150" stroke="#050505" stroke-width="0.8" fill="none"/>
+            <path d="M 200 62 Q 190 105 180 150" stroke="#050505" stroke-width="0.8" fill="none"/>
+            <!-- button top -->
+            <circle cx="150" cy="55" r="4" fill="#1a1a1a"/>
+            <!-- visor -->
+            <path d="M 60 150 Q 150 195 240 150 L 240 165 Q 150 210 60 165 Z" fill="#050505" stroke="#1a1a1a"/>
+            <!-- front embroidery tonal (subtle) -->
+            <use href="#olaShort" x="118" y="95" width="64" height="28" opacity="0.45"/>
+            <!-- red dot highlight -->
+            <circle cx="178" cy="118" r="3" fill="#FF2D2D"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Gorra Capitán<span class="dot"></span></h5>
+          <div class="cap">Estructurada · Bordado tonal + punto rojo</div>
+        </div>
+      </div>
+
+      <!-- 04 · Hoodie (big) -->
+      <div class="merch big">
+        <span class="label"><b>04</b>Hoodie</span>
+        <span class="variant">Logo espalda / pecho</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 400 340" width="340">
+            <ellipse cx="200" cy="332" rx="160" ry="5" fill="rgba(0,0,0,0.4)"/>
+            <!-- hood back -->
+            <path d="M 145 55 Q 200 35 255 55 L 260 110 Q 200 95 140 110 Z" fill="#070707" stroke="#1a1a1a"/>
+            <!-- body -->
+            <path d="M 70 100 L 140 75 Q 200 100 260 75 L 330 100 L 355 170 L 315 185 L 315 320 Q 315 326 309 326 L 91 326 Q 85 326 85 320 L 85 185 L 45 170 Z"
+                  fill="#0a0a0a" stroke="#1a1a1a"/>
+            <path d="M 85 185 L 85 320 Q 85 326 91 326 L 100 326 L 100 190 Z" fill="#050505"/>
+            <path d="M 315 185 L 315 320 Q 315 326 309 326 L 300 326 L 300 190 Z" fill="#050505"/>
+            <!-- hood inside -->
+            <path d="M 155 95 Q 200 115 245 95 L 250 130 Q 200 150 150 130 Z" fill="#030303"/>
+            <!-- drawstrings -->
+            <line x1="180" y1="135" x2="185" y2="195" stroke="#2a2a2a" stroke-width="2"/>
+            <line x1="220" y1="135" x2="215" y2="195" stroke="#2a2a2a" stroke-width="2"/>
+            <circle cx="185" cy="195" r="2.5" fill="#4a4a4a"/>
+            <circle cx="215" cy="195" r="2.5" fill="#4a4a4a"/>
+            <!-- pocket -->
+            <path d="M 130 215 L 270 215 L 280 275 L 120 275 Z" fill="none" stroke="#050505" stroke-width="1.5"/>
+            <line x1="200" y1="215" x2="200" y2="275" stroke="#050505" stroke-width="1"/>
+            <!-- chest logo left -->
+            <use href="#olaShort" x="120" y="155" width="70" height="30"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Hoodie del Faro<span class="dot"></span></h5>
+          <div class="cap">Fleece pesado · Oversize · Logo pecho izquierdo</div>
+        </div>
+      </div>
+
+      <!-- 05 · Tote -->
+      <div class="merch">
+        <span class="label"><b>05</b>Tote</span>
+        <span class="variant">Lienzo negro</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 260 320" width="200">
+            <ellipse cx="130" cy="312" rx="95" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <!-- handles -->
+            <path d="M 75 90 Q 75 30 105 30 Q 105 80 105 90" fill="none" stroke="#1f1f1f" stroke-width="4"/>
+            <path d="M 185 90 Q 185 30 155 30 Q 155 80 155 90" fill="none" stroke="#1f1f1f" stroke-width="4"/>
+            <!-- body -->
+            <path d="M 55 85 L 205 85 L 215 305 L 45 305 Z" fill="#0a0a0a" stroke="#1a1a1a"/>
+            <!-- subtle fabric texture line -->
+            <line x1="55" y1="95" x2="205" y2="95" stroke="#050505" stroke-width="1"/>
+            <!-- logo center -->
+            <use href="#olaFull" x="70" y="175" width="120" height="22"/>
+            <text x="130" y="220" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="3" fill="#666" text-anchor="middle">MONTA LA OLA</text>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Tote lienzo<span class="dot"></span></h5>
+          <div class="cap">Lienzo 12oz · Serigrafía blanca</div>
+        </div>
+      </div>
+
+      <!-- 06 · Taza -->
+      <div class="merch">
+        <span class="label"><b>06</b>Taza</span>
+        <span class="variant">Cerámica mate</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 300 260" width="220">
+            <ellipse cx="150" cy="250" rx="100" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <!-- handle -->
+            <path d="M 220 90 Q 270 90 270 145 Q 270 200 220 200" fill="none" stroke="#111" stroke-width="14" stroke-linecap="round"/>
+            <path d="M 220 105 Q 255 105 255 145 Q 255 185 220 185" fill="none" stroke="#0a0a0a" stroke-width="12" stroke-linecap="round"/>
+            <!-- body -->
+            <rect x="60" y="80" width="170" height="150" rx="8" fill="#0a0a0a" stroke="#1a1a1a"/>
+            <!-- rim -->
+            <ellipse cx="145" cy="82" rx="85" ry="10" fill="#1a1a1a"/>
+            <ellipse cx="145" cy="82" rx="78" ry="6" fill="#030303"/>
+            <!-- shadow -->
+            <rect x="60" y="80" width="20" height="150" rx="4" fill="#050505"/>
+            <!-- logo -->
+            <use href="#olaFull" x="85" y="145" width="120" height="22"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Taza Capitán<span class="dot"></span></h5>
+          <div class="cap">Cerámica mate negra · Logo blanco</div>
+        </div>
+      </div>
+
+      <!-- 07 · Pin -->
+      <div class="merch">
+        <span class="label"><b>07</b>Pin · Esmalte</span>
+        <span class="variant">Punto rojo</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 280 280" width="210">
+            <defs>
+              <radialGradient id="pinGloss" cx="0.3" cy="0.25">
+                <stop offset="0" stop-color="#3a3a3a"/>
+                <stop offset="0.4" stop-color="#1a1a1a"/>
+                <stop offset="1" stop-color="#000"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="140" cy="268" rx="90" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <circle cx="140" cy="140" r="100" fill="url(#pinGloss)" stroke="#2a2a2a" stroke-width="2"/>
+            <circle cx="140" cy="140" r="92" fill="none" stroke="#0a0a0a" stroke-width="1"/>
+            <!-- gloss highlight -->
+            <ellipse cx="110" cy="95" rx="40" ry="18" fill="rgba(255,255,255,0.08)"/>
+            <!-- logo -->
+            <use href="#olaShort" x="90" y="125" width="100" height="32"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Pin del Faro<span class="dot"></span></h5>
+          <div class="cap">Esmalte negro · Logo blanco · Punto rojo</div>
+        </div>
+      </div>
+
+      <!-- 08 · Termo -->
+      <div class="merch">
+        <span class="label"><b>08</b>Termo</span>
+        <span class="variant">Acero mate</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 200 340" width="160">
+            <ellipse cx="100" cy="332" rx="70" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <!-- cap -->
+            <rect x="55" y="30" width="90" height="40" rx="4" fill="#1a1a1a" stroke="#2a2a2a"/>
+            <rect x="55" y="30" width="10" height="40" rx="2" fill="#0a0a0a"/>
+            <!-- body -->
+            <rect x="45" y="70" width="110" height="250" rx="10" fill="#0a0a0a" stroke="#1a1a1a"/>
+            <!-- side shadow -->
+            <rect x="45" y="70" width="12" height="250" rx="4" fill="#050505"/>
+            <!-- highlight -->
+            <rect x="130" y="80" width="3" height="230" fill="rgba(255,255,255,0.06)"/>
+            <!-- vertical logo -->
+            <g transform="translate(100 200) rotate(-90)">
+              <use href="#olaFull" x="-55" y="-12" width="110" height="22"/>
+            </g>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Termo Navegante<span class="dot"></span></h5>
+          <div class="cap">Acero 500ml · Grabado láser</div>
+        </div>
+      </div>
+
+      <!-- 09 · Tote blanco variante -->
+      <div class="merch">
+        <span class="label"><b>09</b>Tote · Lienzo</span>
+        <span class="variant">Versión crudo</span>
+        <div class="merch-viz">
+          <svg viewBox="0 0 260 320" width="200">
+            <ellipse cx="130" cy="312" rx="95" ry="4" fill="rgba(0,0,0,0.4)"/>
+            <path d="M 75 90 Q 75 30 105 30 Q 105 80 105 90" fill="none" stroke="#8a7a5a" stroke-width="4"/>
+            <path d="M 185 90 Q 185 30 155 30 Q 155 80 155 90" fill="none" stroke="#8a7a5a" stroke-width="4"/>
+            <path d="M 55 85 L 205 85 L 215 305 L 45 305 Z" fill="#d4c9ae" stroke="#a89878"/>
+            <line x1="55" y1="95" x2="205" y2="95" stroke="#b8a988" stroke-width="1"/>
+            <use href="#olaShortBlack" x="90" y="175" width="80" height="30"/>
+          </svg>
+        </div>
+        <div class="merch-foot">
+          <h5>Tote crudo<span class="dot"></span></h5>
+          <div class="cap">Lienzo natural · Serigrafía negra</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Merch rules -->
+    <div style="margin-top: 48px; padding: 32px; border: 1px solid var(--line); background: var(--ink-80); display: grid; grid-template-columns: 180px 1fr; gap: 40px; align-items: start;">
+      <div style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--red); text-transform: uppercase;">REGLAS<br/>DE MERCH</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-size: 14px; line-height: 1.6;">
+        <div><b style="color: var(--white);">Negro 80%</b><br/><span style="color: var(--muted);">Todo el merch vive en negro. El blanco es excepción (polo uniforme, tote de lienzo).</span></div>
+        <div><b style="color: var(--white);">Un solo punto rojo</b><br/><span style="color: var(--muted);">Siempre como firma del logotipo. Nunca como estampado independiente ni decoración.</span></div>
+        <div><b style="color: var(--white);">Materiales premium</b><br/><span style="color: var(--muted);">Piqué, algodón pesado, fleece grueso, cerámica mate. El Faro no viste barato.</span></div>
+        <div><b style="color: var(--white);">Sin frases motivacionales</b><br/><span style="color: var(--muted);">Máximo "MONTA · LA · OLA" en espalda o lateral. Nada de "hustle", "entrepreneur", "boss".</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== 15 REGLAS =============== -->
+<section id="reglas">
+  <div class="wrap">
+    <div class="sect-head">
+      <div class="sect-num"><big>15<em>.</em></big>Reglas</div>
+      <div>
+        <h2 class="sect-title">Qué sí.<br/>Qué no<span class="dot"></span></h2>
+        <p class="sect-desc">Este documento solo sirve si se aplica. Aquí quedan las reglas concretas para cualquier pieza: post, landing, email, video, podcast o presentación.</p>
+      </div>
+    </div>
+
+    <div class="rules-list">
+      <div class="rule-row">
+        <div class="n">REGLA<br/>01</div>
+        <div>
+          <h5>Toda comunicación abre con "OLA empresario, [imperativo suave]"</h5>
+          <p>"OLA empresario, respira." · "OLA empresario, mira tus números." · "OLA empresario, suelta amarras."</p>
+        </div>
+      </div>
+      <div class="rule-row">
+        <div class="n">REGLA<br/>02</div>
+        <div>
+          <h5>Una idea por frase. El Faro no encadena con comas.</h5>
+          <p>Corta. Cada punto es una decisión.</p>
+          <div class="ex">"Tu negocio vende. Tu negocio es caos. Esas dos frases no se contradicen. Se diagnostican."</div>
+        </div>
+      </div>
+      <div class="rule-row">
+        <div class="n">REGLA<br/>03</div>
+        <div>
+          <h5>Prohibido el drama.</h5>
+          <p>Nada de "¿te sientes perdido?", "sé lo difícil que es", "yo también lloré". La empatía se demuestra con precisión. Si el Faro acierta el diagnóstico, eso ya es empatía probada.</p>
+        </div>
+      </div>
+      <div class="rule-row">
+        <div class="n">REGLA<br/>04</div>
+        <div>
+          <h5>Siempre hay salida concreta.</h5>
+          <p>Cada pieza termina con una acción verificable o una puerta del sistema. No se diagnostica para dejar al navegante en el vacío.</p>
+        </div>
+      </div>
+      <div class="rule-row">
+        <div class="n">REGLA<br/>05</div>
+        <div>
+          <h5>El punto rojo cierra.</h5>
+          <p>En piezas insignia, el último elemento es el punto rojo, solo, centrado. Es la firma del Faro.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- sí / no visual -->
+    <h3 style="margin: 56px 0 20px; font-weight: 900; font-size: 36px; letter-spacing: -0.03em; text-transform: uppercase;">Reglas visuales</h3>
+
+    <div class="rules-sino">
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Fondos negros sólidos o blancos planos.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Gradientes, degradados, fondos con fotos.</p>
+      </div>
+
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Sans serif en bold para titulares.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Scripts, serif decorativas, tipografías "motivacionales".</p>
+      </div>
+
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Espacio en blanco abundante. Respiro.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Composiciones saturadas con íconos, emojis, decoración.</p>
+      </div>
+
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Un solo punto rojo como acento.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Múltiples elementos rojos que diluyen el símbolo.</p>
+      </div>
+
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Fotos en blanco y negro de alto contraste.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Fotos con filtros, vintage, sepia o pasteles.</p>
+      </div>
+
+      <div class="sino-cell si">
+        <div class="tag">+ SÍ</div>
+        <p>Datos y números como titular cuando procede.</p>
+      </div>
+      <div class="sino-cell no">
+        <div class="tag">— NO</div>
+        <p>Frases motivacionales genéricas sin sustancia.</p>
+      </div>
+    </div>
+
+    <blockquote class="faro-quote" style="margin-top: 72px;">
+      "La marca no grita. El Faro orienta. Y quien se orienta, llega."
+      <footer>— El Faro</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- =============== END =============== -->
+<div class="endblock">
+  <p class="close">Monta<br/>la ola<span class="dot"></span></p>
+  <p>OLAempresario · Brand Kit · V 1.0 · 2026 · olaempresario.com</p>
+</div>
+
+<!-- =============== TWEAKS =============== -->
+<div class="tweaks" id="tweaks-panel">
+  <h5><span class="dot"></span>Tweaks<span style="margin-left:auto;cursor:pointer;color:var(--muted);" id="tweaks-close">✕</span></h5>
+  <div class="tweak-row">
+    <label>Modo</label>
+    <div class="tweak-opts">
+      <div class="tweak-opt" data-key="mode" data-val="dark">Oscuro</div>
+      <div class="tweak-opt" data-key="mode" data-val="light">Claro</div>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <label>Intensidad Rojo Faro</label>
+    <div class="tweak-opts three">
+      <div class="tweak-opt" data-key="redIntensity" data-val="deep">Deep</div>
+      <div class="tweak-opt" data-key="redIntensity" data-val="standard">Std</div>
+      <div class="tweak-opt" data-key="redIntensity" data-val="hot">Hot</div>
+    </div>
+  </div>
+</div>
+<button class="tweaks-toggle" id="tweaks-toggle" aria-label="Ajustes"><span class="dot"></span>Tweaks</button>
+
+<script>
+const STORAGE_KEY = 'olaempresario.brandkit.tweaks';
+const stored = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } })();
+const state = { ...TWEAK_DEFAULTS, ...stored };
+const panel = document.getElementById('tweaks-panel');
+const toggle = document.getElementById('tweaks-toggle');
+
+function applyState() {
+  document.documentElement.setAttribute('data-mode', state.mode);
+  document.documentElement.setAttribute('data-red',
+    state.redIntensity === 'standard' ? '' : state.redIntensity);
+  document.querySelectorAll('.tweak-opt').forEach(opt => {
+    opt.classList.toggle('on', state[opt.dataset.key] === opt.dataset.val);
+  });
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
+}
+applyState();
+
+document.querySelectorAll('.tweak-opt').forEach(opt => {
+  opt.addEventListener('click', () => {
+    state[opt.dataset.key] = opt.dataset.val;
+    applyState();
+  });
+});
+
+toggle.addEventListener('click', () => {
+  panel.classList.add('on');
+  toggle.style.display = 'none';
+});
+document.getElementById('tweaks-close').addEventListener('click', () => {
+  panel.classList.remove('on');
+  toggle.style.display = '';
+});
+</script>
+
+</body>
+</html>

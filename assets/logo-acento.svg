@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <rect width="1000" height="1000" fill="#FF2D2D"/>
+  <text x="500" y="500" text-anchor="middle" font-family="Arial, sans-serif">
+    <tspan font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="120" letter-spacing="-5" fill="#FFFFFF">OLA</tspan><tspan font-size="120" fill="#FFFFFF" dy="-14">&#8226;</tspan><tspan font-family="Helvetica Neue, Arial, sans-serif" font-weight="300" font-size="53" fill="#FFFFFF" fill-opacity="0.8" dx="6" dy="14">empresario</tspan>
+  </text>
+</svg>

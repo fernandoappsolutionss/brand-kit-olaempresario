@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000"/>
+  <text x="256" y="290" text-anchor="middle" font-family="Arial, sans-serif">
+    <tspan font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="130" letter-spacing="-5" fill="#FFFFFF">OLA</tspan><tspan font-size="130" fill="#FF2D2D" dy="-16">&#8226;</tspan>
+  </text>
+</svg>
